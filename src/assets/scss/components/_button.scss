@@ -1,0 +1,6 @@
+.btn_type-1 {
+    @include btn($text-color: $red);
+    border-width: 4px;
+    cursor: pointer;
+}
+

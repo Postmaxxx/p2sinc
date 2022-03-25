@@ -1,0 +1,302 @@
+html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer, section, nav, img, a, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.site-container {
+  max-width: 1440px;
+  padding-left: 70px;
+  padding-right: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid red; }
+
+.content-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.footer-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around; }
+
+@font-face {
+  font-family: "Poppins-700";
+  src: url("../fonts/Poppins-Bold.woff2") format("woff2"), url("../fonts/Poppins-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Poppins-500";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2"), url("../fonts/Poppins-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "Poppins-400";
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2"), url("../fonts/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "GTWalsheimBold";
+  src: url("../fonts/GT Walsheim Bold.woff2") format("woff2"), url("../fonts/GT Walsheim Bold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "GTWalsheimMedium";
+  src: url("../fonts/GT Walsheim Medium.woff2") format("woff2"), url("../fonts/GT Walsheim Medium.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "GTWalsheimRegular";
+  src: url("../fonts/GT Walsheim Regular.woff2") format("woff2"), url("../fonts/GT Walsheim Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "GTWalsheimLight";
+  src: url("../fonts/GT Walsheim Light.woff2") format("woff2"), url("../fonts/GT Walsheim Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+.btn_type-1 {
+  width: 150px;
+  min-width: 150px;
+  height: 50px;
+  text-transform: uppercase;
+  border: 2px solid #EFEFEF;
+  color: #F15D5B;
+  background-color: transparent;
+  background-image: url("");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-width: 4px;
+  cursor: pointer; }
+
+.homepage__hero__carousel {
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+  margin-left: 0;
+  cursor: grab;
+  display: flex;
+  border: 2px solid blue; }
+
+.homepage__hero__carousel_grabbed {
+  cursor: grabbing; }
+
+.homepage__slider {
+  height: 500px;
+  margin-top: 105px;
+  cursor: grab;
+  border: 2px solid yellow;
+  width: 100%;
+  overflow: hidden; }
+  .homepage__slider__ribbon {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    pointer-events: none;
+    white-space: nowrap;
+    height: 100%; }
+    .homepage__slider__ribbon__slide {
+      width: 100%;
+      height: 100%;
+      border: 3px solid blue;
+      background-size: 100% auto;
+      background-position: center center;
+      display: inline-block;
+      background-repeat: no-repeat; }
+    .homepage__slider__ribbon__panel {
+      position: relative;
+      right: 300px;
+      bottom: 100px; }
+
+.slide-1 {
+  background-image: url("../img/1.jpg"); }
+
+.slide-2 {
+  background-image: url("../img/2.jpg"); }
+
+.slide-3 {
+  background-image: url("../img/3.jpg"); }
+
+.slide-4 {
+  background-image: url("../img/4.jpg"); }
+
+.homepage__slider_grabbed {
+  cursor: grabbing; }
+
+.header-container {
+  /*   max-width: $site-width;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #BBB;*/ }
+
+.footer__column {
+  width: 20%; }
+  .footer__column__logo {
+    width: 120px; }
+  .footer__column__header {
+    font-family: 'GTWalsheimBold';
+    font-size: 12pt;
+    line-height: 14pt; }
+  .footer__column__text {
+    font-family: 'GTWalsheimMedium';
+    font-size: 12pt;
+    line-height: 18pt;
+    margin-top: 20px; }
+  .footer__column__button {
+    background-color: #000;
+    width: 120px;
+    height: 25px;
+    border-radius: 12px;
+    color: #FFF;
+    font-family: 'GTWalsheimMedium';
+    font-size: 10pt;
+    margin-top: 10px; }
+  .footer__column__socials {
+    margin-top: 20px;
+    height: 30px; }
+    .footer__column__socials__item {
+      display: inline-block;
+      margin-right: 5px; }
+      .footer__column__socials__item__logo {
+        height: 30px;
+        width: 30px; }
+
+.homepage__hero {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .homepage__hero .homepage__hero__left-block {
+    width: 42%; }
+    .homepage__hero .homepage__hero__left-block .homepage__hero__logo {
+      margin-top: 40px;
+      width: 120px; }
+    .homepage__hero .homepage__hero__left-block .homepage__hero__text-container {
+      margin-top: 70px;
+      padding-right: 70px;
+      font-family: 'GTWalsheimBold';
+      color: #3F7793; }
+      .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__title {
+        font-size: 72px;
+        line-height: 62px; }
+      .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__text {
+        font-size: 24px;
+        line-height: 22px; }
+      .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__link {
+        font-size: 14px;
+        line-height: 22px;
+        text-decoration: underline;
+        font-family: 'GTWalsheimMedium'; }
+  .homepage__hero .homepage__hero__right-block {
+    position: relative; }
+
+.homepage__our-divisions {
+  margin-top: 100px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px; }
+  .homepage__our-divisions .homepage__our-divisions__text {
+    font-family: 'GTWalsheimMedium';
+    color: #3F7793;
+    font-size: 72px;
+    line-height: 62px; }
+  .homepage__our-divisions .homepage__our-divisions__logos {
+    width: 750px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; }
+    .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item {
+      max-width: 180px;
+      position: relative;
+      font-size: 0; }
+      .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__link {
+        font-family: 'GTWalsheimMedium';
+        color: #000;
+        font-size: 12px;
+        text-decoration: underline;
+        float: left;
+        letter-spacing: 0px; }
+      .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_pipe {
+        width: 60px;
+        margin-left: auto;
+        position: absolute;
+        top: -55px;
+        right: 7px; }
+      .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_sun {
+        width: 40px;
+        margin-left: auto;
+        position: absolute;
+        top: -60px;
+        right: 7px; }
+      .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_helmet {
+        width: 90px;
+        margin-left: auto;
+        position: absolute;
+        top: -50px;
+        right: -5px; }
+
+.homepage__connect {
+  padding-top: 60px;
+  width: 100%;
+  height: 366px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: #3F7793; }
+  .homepage__connect .homepage__connect__item {
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #FFF; }
+    .homepage__connect .homepage__connect__item__logo {
+      height: 40px;
+      fill: none;
+      stroke: #fff;
+      stroke-miterlimit: 10;
+      stroke-width: 1px; }
+    .homepage__connect .homepage__connect__item__header {
+      margin-top: 20px;
+      font-family: 'GTWalsheimBold';
+      font-size: 22pt;
+      line-height: 22pt;
+      letter-spacing: -6%; }
+    .homepage__connect .homepage__connect__item__text {
+      font-family: 'GTWalsheimLight';
+      font-size: 10pt;
+      line-height: 12pt;
+      margin-top: 20px;
+      text-align: center; }
+    .homepage__connect .homepage__connect__item__link {
+      font-family: 'GTWalsheimLight';
+      font-size: 12pt;
+      line-height: 14pt;
+      margin-top: 20px;
+      text-decoration: underline; }
