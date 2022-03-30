@@ -1,41 +1,78 @@
 import {makeCarousel} from './components/carousel-max.js';
 import {makeSlider} from './components/slider-max.js';
+//import {Splide} from 'https://www.jsdelivr.com/package/npm/@splidejs/splide'
+  
 
+/*
 
-let carouselWidth = 850;
-let contentConteinerWidth = document.querySelector('.content-container');
-console.log(contentConteinerWidth.clientWidth);
-if (contentConteinerWidth.clientWidth < 1280) {
-    carouselWidth = 850 + contentConteinerWidth.clientWidth - 1280;
-} 
-/*if (contentConteinerWidth.clientWidth < 1280) {
-    carouselWidth = 900 + contentConteinerWidth.clientWidth - 1280;
-} 
+document.addEventListener( 'DOMContentLoaded', function() {
+    const splide = new Splide( '.splide' );
+  splide.mount();
+} );
 */
 
-
-
-let carousel_1 = {
+let carousel_prop = {
     destinationClass : 'homepage__hero__carousel',
-    carouselHeight : 600,
-    carouselWidth: carouselWidth,
     imgWidth : 600,
     imgGap : 50,
     bgMoveSpeed : 5, //moving without dragging, defaultSpeed, px/tick
     timeToBgMove : 5000, //time to start background movement after stop in ms
     inertiaSensivity : 10, //inetria turns on when moving speed is higher
     inertiaStep : 0.99, //currentInertiaSpeed = inertiaStep * currentInertiaSpeed every tick
-    imagesPaths : ['./assets/img/1.jpg','./assets/img/2.jpg','./assets/img/3.jpg','./assets/img/4.jpg','./assets/img/5.jpg','./assets/img/6.jpg'],
+    imagesPaths : [['./assets/img/1.jpg', 'First project of our organisation', 'http://yandex.ru'],['./assets/img/2.jpg', 'Second project', 'http://yandex.ru'],['./assets/img/3.jpg', 'Project 3', 'http://mail.ru'],['./assets/img/4.jpg', 'Project 4', 'http://ya.ru'],['./assets/img/5.jpg', 'Project 5', 'http://p2sinc.com'],['./assets/img/6.jpg', 'Project 6', 'http://exler.ru']],
     
     expandPath : './assets/img/expand-icon.jpg',
-    expandIconWidth: 25
+    closePath : './assets/img/x.png',
+    nodeForFullsize : 'content-container',
+    expandIconWidth: 25,
+    transitionTime: 1
 }
 
-let carousel = makeCarousel(carousel_1);
+let carousel = makeCarousel(carousel_prop);
+
+//console.log(carousel);
+//carousel.destroy()
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+window.addEventListener('resize',(e) => {
+    //console.log(carousel);
+    //carousel.destroy(); //?????
+    let contentConteinerWidth = document.querySelector('.content-container');
+    if (contentConteinerWidth.clientWidth < 1280) {
+        carouselWidth = 850 + contentConteinerWidth.clientWidth - 1280;
+    } 
+    carousel();
+})
+
+*/
 
 let slider_1 = {
     destinationClass : 'homepage__slider',

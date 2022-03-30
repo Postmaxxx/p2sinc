@@ -6,23 +6,42 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
 
 .site-container {
     max-width: 1440px;
-    padding-left: 70px;
-    padding-right: 70px;
+    //padding-left: 70px;
+   //padding-right: 70px;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid red;
+
+   /* @include respond-to(lg) {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    @include respond-to(md) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @include respond-to(sm) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @include respond-to(xs) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }*/
 }
 
 
 
 .content-container {
-    max-width: $site-width;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
+    border: 2px solid black;
+
 }
 
 .footer-container {
-    max-width: $site-width;
+    max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 60px;

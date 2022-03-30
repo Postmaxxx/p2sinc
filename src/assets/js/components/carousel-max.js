@@ -1,13 +1,21 @@
 export function makeCarousel(params) {
 
-const {destinationClass, imagesPaths, carouselWidth, carouselHeight, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth } = params;
+const {destinationClass, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth, nodeForFullsize, transitionTime, closePath } = params;
 const carousel = document.querySelector('.'+destinationClass)
+
+let carouselHeight = document.querySelector('.'+destinationClass).clientHeight;
+let carouselWidth = document.querySelector('.'+destinationClass).clientWidth;
+
 const totalImages = imagesPaths.length; 
 
 let mouseEnterPoint, dxMouse = 0; //mouseX - start amoun X of mouse when button pressed, dxMouse - the difference between mouseX and current mouse X position 
 let dxRibbon = - (imgWidth + imgGap)*2 + (carouselWidth - (imgWidth + imgGap))/2; //offset of Ribbon
 let move = false; //is gallery moving now
-let picsArray = [1,2,3,4,5]; //the array length=5 for images to show
+
+let picsArray = [...imagesPaths]; //the array length=5 for images to show
+picsArray = picsArray.slice(0, 5)
+//console.log('picsArray', picsArray, 'imagesPaths    ', imagesPaths);
+
 let basePic = totalImages - 2; //the order of the first picture in picsArray
 const carouselCenter = dxRibbon;
 //offsetMax = max offset of image (left or right)
@@ -24,29 +32,47 @@ let bgMoveCounter; //setinterval for background movement
 let bgMoveCoundown; //setTimeout for background movement restore
 
 //creation the carousel html and styles
-carousel.style.maxWidth = carouselWidth + 'px';
+carousel.style.maxWidth = '100%';
 carousel.style.height = carouselHeight + 'px';
 carousel.style.position = 'relative';
 carousel.style.overflow = 'hidden';
 carousel.style.whiteSpace = 'nowrap';
 carousel.style.userSelect = 'none';
 carousel.style.boxSizing = 'border-box';
+carousel.style.transition = `${transitionTime}s`;
 
 
 carousel.innerHTML = `
     <div class="${destinationClass}-images-container">
-        ${picsArray.map((el) => {
+        ${picsArray.map((el, index) => {
             return (`
             <div class="${destinationClass}-img-container">
                 <img class="${destinationClass}-expand-icon" src="${expandPath}">
-            </div>
-            `)
+            </div>`)
         }).join('')}
-    </div>`
+    </div>
+    `
 
 const ribbonImages = document.querySelector(`.${destinationClass}-images-container`); //The container for all 5 images
 const imgContainerList = document.querySelectorAll(`.${destinationClass}-img-container`); //The list of all 5 containers
 const imgExpandIconList = document.querySelectorAll(`.${destinationClass}-expand-icon`); //The list of all 5 containers
+
+
+const sourceNode = document.querySelector(`.${nodeForFullsize}`);
+sourceNode.insertAdjacentHTML('afterbegin', `
+    <div class="${destinationClass}-full-screen-wrapper">
+            <div class="${destinationClass}-full-screen-image"></div>
+            <div class="${destinationClass}-full-screen-image-closer"></div>
+            <div class="${destinationClass}-description">
+                <a class="${destinationClass}-link" href="#"></a>
+            </div>
+    </div>`)
+const imgFullScreenWrapper = document.querySelector(`.${destinationClass}-full-screen-wrapper`); //The container for fullscreen image
+const imgFullScreenImage = document.querySelector(`.${destinationClass}-full-screen-image`); //The container for fullscreen image
+const imgFullScreenCloser = document.querySelector(`.${destinationClass}-full-screen-image-closer`); //The container for fullscreen image
+const imgDescr = document.querySelector(`.${destinationClass}-description`); 
+const imgDescrLink = document.querySelector(`.${destinationClass}-link`); 
+
 
 
 //styles injection
@@ -58,7 +84,7 @@ ribbonImages.style.cssText = `
     width: auto;
     display: inline-block;
     pointer-events: none;
-`
+    `
 
 imgContainerList.forEach((el) => {
     el.style.cssText = `
@@ -70,24 +96,100 @@ imgContainerList.forEach((el) => {
         box-sizing: border-box;
         display: inline-block;
         overflow: hidden;
-        pointer-events: none;
-
+        
         border: 1px solid green;
         background-size: auto 100%;
         background-position: 50% center;
-    `
-})
+        pointer-events: none;
+        `
+    })
 
 
-imgExpandIconList.forEach((el) => {
+imgExpandIconList.forEach((el, index) => {
     el.style.cssText = `
         width: ${expandIconWidth}px;
         height: $auto;
         position: relative;
-        top: 450px;
-        left: +${expandIconWidth/2}px;
+        top: 85%;
+        left: 10%;
+        pointer-events: auto;
+        cursor: pointer;
+
     `
 })
+
+
+
+function defaultFullScreenStyles() {
+    imgFullScreenWrapper.style.cssText = `
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: ${transitionTime}s;
+    `;
+
+    imgFullScreenCloser.style.cssText = `
+        height: 0px;
+        width: 0px;
+        border-radius: 50%;
+        background-color: #404040;
+        position: relative;
+        bottom: 70px;
+        align-self: flex-end;
+        z-index: 2000;
+        pointer-events: auto;
+        cursor: pointer;
+        margin-right: 30px;
+        transition: ${transitionTime}s;
+        background-image: url(${closePath});
+        background-size: 60% 60%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    `;
+
+    imgDescr.style.cssText = `
+        top: ${carouselHeight-120}px;
+        width: 0;
+        height: 0;
+        padding: 15px;
+        background-color: #404040;
+        border-radius: 20px;
+        margin-right: 30px;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        max-width: 300px;
+        color: white;
+        display: none;
+        transition: ${transitionTime}s;
+    `;
+
+    imgDescrLink.style.pointerEvents = 'auto';
+    imgDescrLink.style.textDecoration = 'underline';
+    imgDescrLink.style.transition = `${transitionTime}s`
+
+    carousel.style.opacity = '100%';
+}
+
+defaultFullScreenStyles();
+
+
+
+
+
+
+
+
+
 
 
 
@@ -102,12 +204,16 @@ const changePicsOrder = (direction) => { //change pictures to show in picsArray 
     }
     
     for (var index = 0; index < 5; index++) {
-        picsArray[index] = (basePic+index < totalImages) ? imagesPaths[index+basePic] : imagesPaths[basePic+index - totalImages] 
+        picsArray[index] = (basePic+index < totalImages) ? imagesPaths[index+basePic] : imagesPaths[basePic+index - totalImages]
     }
     
 
     imgContainerList.forEach((el, index) => {  //change all 5 images to show in imagesList
-        el.style.backgroundImage = `url(${picsArray[index]}`;
+        el.style.backgroundImage = `url(${picsArray[index][0]}`;
+        el.childNodes[1].dataset.path = picsArray[index][0]; //changing path links for expanding images
+        el.childNodes[1].dataset.descr = picsArray[index][1]; //changing path links for expanding images
+        el.childNodes[1].dataset.link = picsArray[index][2]; //changing path links for expanding images
+        //<a class="${destinationClass}-link" href="${imagesPaths[index][2]}">${imagesPaths[index][1]}</a>
     })
 
 }
@@ -135,18 +241,63 @@ const redrawCarousel = (dx) => { //changing the position of ribbonImages
     
     ribbonImages.style.left = `${dx + dxRibbon}px`; //change ribbon position
     changeImgOffset(dx + dxRibbon); //change images offset
+
+
     
 }
 
 
 
-function expandImage(imagePath) {
+function expandImage(path, descr, link) {
+    imgFullScreenWrapper.style.top = `10px`;
+    imgFullScreenWrapper.style.left = `1vw`;
+    imgFullScreenWrapper.style.width = `98%`;
+    imgFullScreenWrapper.style.height = `${carouselHeight}px`;
+    imgFullScreenWrapper.style.border = `2px solid blue`;
+    imgFullScreenWrapper.style.backgroundImage = `url(${path})`;
+    imgFullScreenWrapper.style.backgroundSize = `100% auto`;
+    imgFullScreenWrapper.style.backgroundRepeat = `no-repeat`;
+    imgFullScreenWrapper.style.backgroundPosition = `50% 50%`;
+
+
+    imgFullScreenImage.style.width = `100%`;
+    imgFullScreenImage.style.height = `${carouselHeight}px`;
+
+    imgDescr.style.position = `relative`;
+    imgDescr.style.top = `-50px`;
+    imgDescr.style.display = 'block'
+    imgDescr.style.height = 'auto'
+    imgDescr.style.width = 'auto'
+
+
+    imgDescrLink.innerHTML = descr;
+    imgDescrLink.href = link;
+
+    imgFullScreenCloser.style.bottom = `${carouselHeight -130}px`;
+    imgFullScreenCloser.style.height = `25px`;
+    imgFullScreenCloser.style.width = `25px`;
+
+    carousel.style.opacity = '50%'
+
 }
+
+
+
+
+function closeImage() {
+    defaultFullScreenStyles();
+
+}
+
+
+imgFullScreenCloser.addEventListener('click', e => closeImage(e))
+
 
 
 function mouseDownActions(e) {
-    //if(e.target === )
-    
+    if (e.target.tagName === 'IMG') {
+        expandImage(e.target.dataset.path,e.target.dataset.descr,e.target.dataset.link);
+    }
 
     clearInterval(inertiaCounter); //stop the inertia
     clearTimeout(bgMoveCoundown); //stop the countdown
@@ -157,11 +308,42 @@ function mouseDownActions(e) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 carousel.addEventListener('mousedown', e => mouseDownActions(e))
-
-carousel.addEventListener('click', e => console.log(e.target))
-
-
 
 function mouseMoveActions(e) {
     if (move) {
@@ -232,7 +414,6 @@ carouselInertionTimer = setInterval((e) => { //check mouse speed every 100ms
     inertiaCurrentMouseX = dxMouse;
 }, 100);
 
-
 changePicsOrder(); //initial filling picsArray
 redrawCarousel(0); //initial draw the carousel
 
@@ -241,24 +422,24 @@ bgMovement(bgMoveSpeed);
 
 
 
-return function destroy() {
-        carousel.removeEventListener('mousedown', e => mouseDownActions(e))
-        carousel.removeEventListener('mousemove', e => mouseMoveActions(e))
-        carousel.removeEventListener('mouseup', e => stopMove(e));
-        carousel.removeEventListener('mouseout', e => stopMove(e));
 
-        clearInterval(bgMoveCounter);
-        clearInterval(carouselInertionTimer);
-        clearInterval(inertiaCounter); 
-        clearTimeout(bgMoveCoundown); 
+function destroy() {
+    carousel.removeEventListener('mousedown', e => mouseDownActions(e))
+    carousel.removeEventListener('mousemove', e => mouseMoveActions(e))
+    carousel.removeEventListener('mouseup', e => stopMove(e));
+    carousel.removeEventListener('mouseout', e => stopMove(e));
+    imgFullScreenCloser.removeEventListener('click', e => closeImage())
+
+    clearInterval(bgMoveCounter);
+    clearInterval(carouselInertionTimer);
+    clearInterval(inertiaCounter); 
+    clearTimeout(bgMoveCoundown); 
+
+
+}
+
+return destroy
         
-        //console.log('destroyed');
-
-    }
-
-
-
-
 
 }
 
