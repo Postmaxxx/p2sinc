@@ -61,14 +61,17 @@ const imgExpandIconList = document.querySelectorAll(`.${destinationClass}-expand
 const sourceNode = document.querySelector(`.${nodeForFullsize}`);
 sourceNode.insertAdjacentHTML('afterbegin', `
     <div class="${destinationClass}-full-screen-wrapper">
-            <div class="${destinationClass}-full-screen-image"></div>
-            <div class="${destinationClass}-full-screen-image-closer"></div>
-            <div class="${destinationClass}-description">
-                <a class="${destinationClass}-link" href="#"></a>
-            </div>
+        <div class="${destinationClass}-full-screen-image-closer"></div>
+        <div class="${destinationClass}-img-wrapper">
+            <img class="${destinationClass}-full-screen-image">
+        </div>
+        <div class="${destinationClass}-description">
+            <a class="${destinationClass}-link" href="#"></a>
+        </div>
     </div>`)
 const imgFullScreenWrapper = document.querySelector(`.${destinationClass}-full-screen-wrapper`); //The container for fullscreen image
 const imgFullScreenImage = document.querySelector(`.${destinationClass}-full-screen-image`); //The container for fullscreen image
+const imgWrapper = document.querySelector(`.${destinationClass}-img-wrapper`); //The container for fullscreen image
 const imgFullScreenCloser = document.querySelector(`.${destinationClass}-full-screen-image-closer`); //The container for fullscreen image
 const imgDescr = document.querySelector(`.${destinationClass}-description`); 
 const imgDescrLink = document.querySelector(`.${destinationClass}-link`); 
@@ -123,25 +126,27 @@ function defaultFullScreenStyles() {
         margin: 0;
         padding: 0;
         position: absolute;
-        top: 50%;
+        top: ${carouselHeight / 2}px;
         left: 50%;
         width: 0px;
-        height: 0px;
         z-index: 1000;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         transition: ${transitionTime}s;
     `;
 
+    imgFullScreenImage.style.cssText = `
+        object-position: 50% 50%
+    `
+
     imgFullScreenCloser.style.cssText = `
-        height: 0px;
-        width: 0px;
+        height: 0;
+        width: 0;
         border-radius: 50%;
         background-color: #404040;
-        position: relative;
-        bottom: 70px;
+        position: relarive;
         align-self: flex-end;
         z-index: 2000;
         pointer-events: auto;
@@ -247,21 +252,35 @@ const redrawCarousel = (dx) => { //changing the position of ribbonImages
 
 
 function expandImage(path, descr, link) {
-    imgFullScreenWrapper.style.top = `10px`;
+    imgFullScreenWrapper.style.top = `-15px`;
     imgFullScreenWrapper.style.left = `1vw`;
     imgFullScreenWrapper.style.width = `98%`;
-    imgFullScreenWrapper.style.height = `${carouselHeight}px`;
-    imgFullScreenWrapper.style.backgroundImage = `url(${path})`;
-    imgFullScreenWrapper.style.backgroundSize = `100% auto`;
-    imgFullScreenWrapper.style.backgroundRepeat = `no-repeat`;
-    imgFullScreenWrapper.style.backgroundPosition = `50% 50%`;
+    //imgFullScreenWrapper.style.border = `2px solid red`;
+    imgFullScreenWrapper.style.height = `${carouselHeight + 75}px`;
+
+    
+
+
+
+    imgWrapper.style.width = `100%`;
+    imgWrapper.style.maxHeight = `${carouselHeight}px`;
+    //imgWrapper.style.border = `2px solid blue`;
+    imgWrapper.style.overflow = `hidden`;
+
 
 
     imgFullScreenImage.style.width = `100%`;
-    imgFullScreenImage.style.height = `${carouselHeight}px`;
+    imgFullScreenImage.style.content = `url(${path})`;
+    //imgFullScreenImage.style.objectFit = `cover`;
+    imgFullScreenImage.style.objectPosition = `100% 100%`;
+    imgFullScreenImage.style.height = `auto`;
+
+
+
+
 
     imgDescr.style.position = `relative`;
-    imgDescr.style.top = `-50px`;
+    imgDescr.style.top = `-100px`;
     imgDescr.style.display = 'block'
     imgDescr.style.height = 'auto'
     imgDescr.style.width = 'auto'
@@ -270,11 +289,16 @@ function expandImage(path, descr, link) {
     imgDescrLink.innerHTML = descr;
     imgDescrLink.href = link;
 
-    imgFullScreenCloser.style.bottom = `${carouselHeight -130}px`;
+    imgFullScreenCloser.style.position = `relative`;
+    imgFullScreenCloser.style.top = `50px`;
     imgFullScreenCloser.style.height = `25px`;
+    imgFullScreenCloser.style.minHeight = `25px`;
     imgFullScreenCloser.style.width = `25px`;
+    imgFullScreenCloser.style.display = 'block'
 
-    carousel.style.opacity = '50%'
+    carousel.style.opacity = '50%';
+
+    console.log(imgFullScreenWrapper.style.background);
 
 }
 
@@ -283,6 +307,7 @@ function expandImage(path, descr, link) {
 
 function closeImage() {
     defaultFullScreenStyles();
+    imgFullScreenCloser.removeEventListener('click', e => closeImage(e))
 
 }
 
@@ -331,14 +356,14 @@ function mouseDownActions(e) {
 
 
 
-
+/*
 function changeToc(e) {
     console.log(window.pageYOffset);
     
 }
 
 document.addEventListener('scroll', e => changeToc(e))
-
+*/
 
 
 
