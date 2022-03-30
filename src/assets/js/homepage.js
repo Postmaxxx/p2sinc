@@ -19,9 +19,9 @@ let carousel_prop = {
     timeToBgMove : 5000, //time to start background movement after stop in ms
     inertiaSensivity : 10, //inetria turns on when moving speed is higher
     inertiaStep : 0.99, //currentInertiaSpeed = inertiaStep * currentInertiaSpeed every tick
-    imagesPaths : [['./assets/img/1.jpg', 'First project of our organisation', 'http://yandex.ru'],['./assets/img/2.jpg', 'Second project', 'http://yandex.ru'],['./assets/img/3.jpg', 'Project 3', 'http://mail.ru'],['./assets/img/4.jpg', 'Project 4', 'http://ya.ru'],['./assets/img/5.jpg', 'Project 5', 'http://p2sinc.com'],['./assets/img/6.jpg', 'Project 6', 'http://exler.ru']],
+    imagesPaths : [['./assets/img/1.jpg', 'First project of our organisation', 'http://yandex.ru','img'],['./assets/img/2.jpg', 'Second project', 'http://yandex.ru','img'],['./assets/img/3.jpg', 'Project 3', 'http://mail.ru','img'],['./assets/img/4.jpg', 'Project 4', 'http://ya.ru','img'],['./assets/img/5.jpg', 'Project 5', 'http://p2sinc.com','vid'],['./assets/img/6.jpg', 'Project 6', 'http://exler.ru','img']],
     
-    expandPath : './assets/img/expand-icon.jpg',
+    expandPath : './assets/img/expand-icon.png',
     closePath : './assets/img/x.png',
     nodeForFullsize : 'content-container',
     expandIconWidth: 25,

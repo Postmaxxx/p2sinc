@@ -178384,10 +178384,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
   box-sizing: border-box; }
 
 .site-container {
-  max-width: 1440px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid red;
   /* @include respond-to(lg) {
         padding-left: 55px;
         padding-right: 55px;
@@ -178406,10 +178405,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     }*/ }
 
 .content-container {
-  max-width: 1440px;
+  width: 100%;
   margin-left: auto;
-  margin-right: auto;
-  border: 2px solid black; }
+  margin-right: auto; }
 
 .footer-container {
   max-width: 1440px;
@@ -178720,7 +178718,6 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
       margin-left: 0;
       cursor: grab;
       display: flex;
-      border: 2px solid blue;
       width: 100% !important;
       height: 600px !important; }
       @media (max-width: 1200px) {

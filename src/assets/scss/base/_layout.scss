@@ -5,12 +5,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
 }
 
 .site-container {
-    max-width: 1440px;
+    //max-width: 1440px;
+    width: 100%;
     //padding-left: 70px;
    //padding-right: 70px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid red;
 
    /* @include respond-to(lg) {
         padding-left: 55px;
@@ -33,10 +33,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
 
 
 .content-container {
-    max-width: 1440px;
+    //max-width: 1440px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
 
 }
 

@@ -96,8 +96,6 @@ imgContainerList.forEach((el) => {
         box-sizing: border-box;
         display: inline-block;
         overflow: hidden;
-        
-        border: 1px solid green;
         background-size: auto 100%;
         background-position: 50% center;
         pointer-events: none;
@@ -253,7 +251,6 @@ function expandImage(path, descr, link) {
     imgFullScreenWrapper.style.left = `1vw`;
     imgFullScreenWrapper.style.width = `98%`;
     imgFullScreenWrapper.style.height = `${carouselHeight}px`;
-    imgFullScreenWrapper.style.border = `2px solid blue`;
     imgFullScreenWrapper.style.backgroundImage = `url(${path})`;
     imgFullScreenWrapper.style.backgroundSize = `100% auto`;
     imgFullScreenWrapper.style.backgroundRepeat = `no-repeat`;
@@ -335,9 +332,12 @@ function mouseDownActions(e) {
 
 
 
+function changeToc(e) {
+    console.log(window.pageYOffset);
+    
+}
 
-
-
+document.addEventListener('scroll', e => changeToc(e))
 
 
 
