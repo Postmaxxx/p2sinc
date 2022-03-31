@@ -36,5 +36,8 @@
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
     "twig": "^1.15.4"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^3.6.12"
   }
 }

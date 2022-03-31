@@ -95,6 +95,21 @@ function createSvgSprite() {
         .pipe(dest('./web/assets/img/sprites/'))
 }
 
+
+
+
+
+/* -----------------------  Video  --------------------------- */
+
+function vidCopy() { //copy videos to 'web/assets/vid' folder
+    return src(['./src/assets/vid/**/*.*'])
+        //.pipe(cache('./web/assets/img'))
+        .pipe(dest('./web/assets/vid/'))
+        .pipe(browsersync.stream());
+}
+
+
+
 /* -----------------------  Fonts  --------------------------- */
 
 function fontsConverter() {
@@ -225,6 +240,7 @@ function createServer() {
     watch("./src/assets/scss/**/*.scss").on("change", series(scssToCss, concatStyles, copyCss));
     watch("./src/assets/js/**/*.*").on('change', series(jsCopy));
     watch(["./src/assets/img/**/*.*", "!./src/assets/img/**/*.svg" ]).on('all', series(imgCopy, reload));
+    watch(["./src/assets/vid/**/*.*"]).on('all', series(vidCopy, reload));
     watch("./src/assets/img/**/*.svg").on('all', series(createSvgSprite));
     watch("./src/assets/fonts/**/*.ttf").on('all', series(fontsConverter));
 };
@@ -237,7 +253,7 @@ const build = series(cleanFolders, parallel(compileTwig, imgCopy, createSvgSprit
 exports.build = build;
 
 
-const server = series(cleanFolders, parallel(compileTwig, imgCopy, createSvgSprite, jsCopy, fontsConverter, scssToCss), tailwindCopy, concatStyles, copyCss, createServer);
+const server = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, jsCopy, fontsConverter, scssToCss), tailwindCopy, concatStyles, copyCss, createServer);
 exports.server = server;
 
 const test = series(scssToCss);

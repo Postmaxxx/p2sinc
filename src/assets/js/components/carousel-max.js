@@ -190,14 +190,6 @@ defaultFullScreenStyles();
 
 
 
-
-
-
-
-
-
-
-
 const changePicsOrder = (direction) => { //change pictures to show in picsArray and show them. Filled from imagesPaths
     if (direction === '+') { //pictures offset when moving left
         (basePic > totalImages -1) ? basePic = 1 : basePic++
