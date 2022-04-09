@@ -249,7 +249,7 @@ function createServer() {
 
 
 
-const build = series(cleanFolders, parallel(compileTwig, imgCopy, createSvgSprite, scssToCssBuild, tailwindCopy, fontsConverter, jsCopyBuild), concatStyles, cssCleaner, copyCss, htmlStylesInjector, htmlMinifier)
+const build = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, scssToCssBuild, tailwindCopy, fontsConverter, jsCopyBuild), concatStyles, cssCleaner, copyCss, htmlStylesInjector, htmlMinifier)
 exports.build = build;
 
 

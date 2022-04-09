@@ -4,4 +4,34 @@
     margin-left: auto;
     margin-right: auto;
     background-color: #BBB;*/
+    background-color: #000;
 }
+
+
+.header_right {
+    position: fixed;
+    top: 40px;
+    right: 70px;
+    z-index: 5000;
+
+    @include respond-to(md) {
+        right: 40px;
+    }
+
+    @include respond-to(xs) {
+        right: 20px;
+    }
+    
+    & #search {
+        //height: 100px;
+        //width: 100px;
+        margin-top: 27px;
+        cursor: pointer;
+    
+        & img {
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+

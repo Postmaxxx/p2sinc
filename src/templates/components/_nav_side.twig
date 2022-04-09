@@ -1,0 +1,22 @@
+{% block navside %}
+<div class="sidenav">
+    <div id="sidemenu">
+        <ul id="nav">
+
+            {% for item in side_navs %}
+                <li class="sidemenu__nav__item sidemenu__nav__item_current" data-block={{ item.block }}>
+                    <a href={{ item.link_to }}>{{ item.text }}</a>
+                    <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_down"></div>
+                    <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_down"></div>
+                </li>
+            {% endfor %}
+            <li class="sidemenu__nav__item" data-block="footer-container">
+                <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_up"></div>
+                <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_up"></div>
+                <a href="#homepage__hero">BACK TO TOP</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock navside %}

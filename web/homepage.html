@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/bundle.css">
     <title>P2S Inc | Home | P2S Inc</title>
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
 
     
 </head>
@@ -19,60 +19,106 @@
         
             <div class="header-container">
     <header class="header">
-        
-    <nav class="nav">
+        <div class="header_right">
+            
+    <div id="showRightPush">
+        <a href="ajvascript:void(0)" class="toggle">
+            <span class="patty">
+            </span>
+        </a>
+    </div>
 
-    </nav>
-
+            <div id="search">
+                <img src="./assets/img/search_temp.png" alt="search">
+            </div>
+        </div>
     </header>
+
 </div>
         
     
     
            
         
+    
+<div class="sidenav">
+    <div id="sidemenu">
+        <ul id="nav">
+
+            
+                <li class="sidemenu__nav__item sidemenu__nav__item_current" data-block=homepage__hero>
+                    <a href=#homepage__our-divisions>WE ARE P2S INC.</a>
+                    <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_down"></div>
+                    <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_down"></div>
+                </li>
+            
+                <li class="sidemenu__nav__item sidemenu__nav__item_current" data-block=homepage__our-divisions>
+                    <a href=#splide>OUR DIVISIONS</a>
+                    <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_down"></div>
+                    <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_down"></div>
+                </li>
+            
+                <li class="sidemenu__nav__item sidemenu__nav__item_current" data-block=splide>
+                    <a href=#homepage__connect>NEWS</a>
+                    <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_down"></div>
+                    <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_down"></div>
+                </li>
+            
+                <li class="sidemenu__nav__item sidemenu__nav__item_current" data-block=homepage__connect>
+                    <a href=#footer-container>JOIN US</a>
+                    <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_down"></div>
+                    <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_down"></div>
+                </li>
+            
+            <li class="sidemenu__nav__item" data-block="footer-container">
+                <div class="sidemenu__nav__arrow-tip sidemenu__nav__arrow-tip_up"></div>
+                <div class="sidemenu__nav__arrow-line sidemenu__nav__arrow-line_up"></div>
+                <a href="#homepage__hero">BACK TO TOP</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
     <div class='content-container'>
-        <div class="homepage__hero">
+        <div class="homepage__hero" id="homepage__hero">
             <div class="homepage__hero__left-block">
-                <img src="./assets/img/p2s_logo-1.png" alt="Our Logo" class="homepage__hero__logo">
+                <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo" class="homepage__hero__logo">
                 <div class="homepage__hero__text-container">
                     <h1 class="homepage__hero__title">We Are<br> P2S Inc.</h1>
                     <p class="homepage__hero__text">Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.</p>
-                    <a href='#' class="homepage__hero__link">earn more about us  &#8594</a>
+                    <a href='#' class="homepage__hero__link">learn more about us  &#8594</a>
                 </div>
             </div>
             <div class="homepage__hero__right-block">
                 <div class="homepage__hero__carousel"></div>
             </div>
         </div>
-        <div class="homepage__our-divisions">
+        <div class="homepage__our-divisions" id="homepage__our-divisions">
             <p class="homepage__our-divisions__text">Our<br> Divisions. </p>
             <div class="homepage__our-divisions__logos">
                 <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/p2s_logo_eng.png" alt="Logo-Eng" class="homepage__our-divisions__item__logo">
+                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_eng" alt="Logo-Eng" class="homepage__our-divisions__item__logo">
                     <a class="homepage__our-divisions__item__link" href="#">Learn More &#8594</a>
                     <a class="homepage__our-divisions__item__link" href="#">/ View Projects &#8594</a>
                     <img src="./assets/img/p2s_logo_pipe.png" alt="Logo-Eng-Pipe" class="homepage__our-divisions__item__logo_pipe">
-                    
                 </div>
                 <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/p2s_logo_cx.png" alt="Logo-Cx" class="homepage__our-divisions__item__logo">
+                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_cx" alt="Logo-Cx" class="homepage__our-divisions__item__logo">
                     <a class="homepage__our-divisions__item__link" href="#">Learn More &#8594</a>
                     <a class="homepage__our-divisions__item__link" href="#">/ View Projects &#8594</a>
                     <img src="./assets/img/p2s_logo_sun.png" alt="Logo-Eng-Pipe" class="homepage__our-divisions__item__logo_sun">
-
                 </div>
                 <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/p2s_logo_cm.png" alt="Logo-Cm" class="homepage__our-divisions__item__logo">
+                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_cm" alt="Logo-Cm" class="homepage__our-divisions__item__logo">
                     <a class="homepage__our-divisions__item__link" href="#">Learn More &#8594</a>
                     <a class="homepage__our-divisions__item__link" href="#">/ View Projects &#8594</a>
                     <img src="./assets/img/p2s_logo_helmet.png" alt="Logo-Eng-Pipe" class="homepage__our-divisions__item__logo_helmet">
-
                 </div>
             </div>
         </div>
 
-        <div class="splide">
+        <div class="splide" id="splide">
             <div class="splide__track">
                   <div class="splide__list">
                       <div class="splide__slide">
@@ -119,7 +165,7 @@
           </div>
         
 
-        <div class="homepage__connect">
+        <div class="homepage__connect" id="homepage__connect">
             <div class="homepage__connect__item">
                 <svg class='homepage__connect__item__logo'>
                     <use xlink:href='./assets/img/sprites/sprite.svg#join-us_logo' ></use>
@@ -154,17 +200,15 @@
         </div>
     </div>
     
-    
-    
 
     
     
     
         
         
-            <div class="footer-container">
+            <div class="footer-container" id="footer-container">
     <div class="footer__logo__container">
-        <img src="./assets/img/p2s_logo-1.png" alt="Our Logo" class="footer__logo">
+        <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo" class="footer__logo">
     </div>
     <div class="footer__columns">
         <div class="footer__columns__column">

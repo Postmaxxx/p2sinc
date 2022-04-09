@@ -1,9 +1,45 @@
-.nav {
+#showRightPush {
 
+    cursor: pointer;
+    height: 26px;
+    display: flex;
+    align-items: center;
+
+    & .toggle {
+
+        & .patty {
+            background: none repeat scroll 0 0 #FFF;
+            height: 4px;
+            top: 0;
+            transition: all 0.3s ease 0s;
+            width: 26px;
+            position: relative;
+            display: block;
+
+            &::before {
+                background: none repeat scroll 0 0 #FFF;
+                content: "";
+                display: inline-block;
+                height: 4px;
+                position: absolute;
+                transition: all 0.3s ease 0s;
+                width: 26px;
+                z-index: -1;
+                top: -10px;
+            }
+
+            &::after {
+                background: none repeat scroll 0 0 #FFF;
+                content: "";
+                display: inline-block;
+                height: 4px;
+                position: absolute;
+                transition: all 0.3s ease 0s;
+                width: 26px;
+                z-index: -1;
+                top: 10px;
+            }
+        }
+
+    }
 }
-
-
-
-
-
-

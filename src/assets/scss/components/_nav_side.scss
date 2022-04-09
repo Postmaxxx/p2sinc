@@ -1,0 +1,93 @@
+/*.sidenav {
+    position: absolute;
+    top: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 80px;
+    z-index: 1000;
+}*/
+
+
+#sidemenu {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 0px;
+    position: fixed;
+    right: 80px;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to(md) {
+        right: 50px;
+    }
+
+    @include respond-to(xs) {
+        right: 30px;
+    }
+
+    & #nav {
+
+
+        & .sidemenu__nav__item {
+            margin: 0;
+            transition: all 0.3s linear 0s;
+            display: none;
+            font-family: 'GTWalsheimMedium';
+            font-size: 12px;
+            color: #FFF;
+            letter-spacing: 0.5;
+            writing-mode: vertical-lr;
+            align-items: center;
+            justify-content: space-between;
+
+            & .sidemenu__nav__arrow-line {
+                width: 0px;
+                height: 100px;
+                border: 1px solid #FFF;
+
+                &_down {
+                    margin-top: 50px;
+                }
+
+                &_up {
+                    height: 50px;
+                    margin-bottom: 50px;
+                }
+            }
+
+
+
+            & .sidemenu__nav__arrow-tip {
+                width: 15px;
+                height: 15px;
+                position: relative;
+                border-bottom: 2px solid #FFF;
+                border-right: 2px solid #FFF;
+
+
+                &_down {
+                    transform: rotate(45deg);
+                    top: -17px;
+                    right: 1px;
+                }
+
+                &_up {
+                    transform: rotate(-135deg);
+                    top: 17px;
+                    right: 1px;
+                }
+            }
+
+            &.sidemenu__nav__item_current {
+                display: flex;
+            }
+        }
+
+
+    }
+}
+

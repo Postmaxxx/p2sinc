@@ -2,3 +2,8 @@
 @import './components/global';
 @import './layouts/global';
 @import './pages/global';
+
+
+html { //!!!
+    scroll-behavior: smooth;
+}

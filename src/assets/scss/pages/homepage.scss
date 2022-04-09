@@ -8,7 +8,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     
-    
     & .homepage__hero__left-block {
         //border: 2px solid green;
         width: 42%;
@@ -45,7 +44,7 @@
             //border: 1px solid red;
             margin-top: 70px;   
             padding-right: 90px;
-            font-family: 'GTWalsheimMedium';
+            font-family: 'GTWalsheimRegular';
             color: #3F7793;
             
             @include respond-to(lg) {
@@ -64,6 +63,7 @@
             
 
             & .homepage__hero__title {
+                //font-family: 'GTWalsheimRegular';
                 font-size: 72px;
                 line-height: 62px;
              
@@ -93,8 +93,8 @@
 
             & .homepage__hero__text {
                 margin-top: 40px;
-                font-size: 24px;
-                line-height: 22px;
+                font-size: 28px;
+                line-height: 30px;
 
                 @include respond-to(lg) {
                     font-size: 22px;
@@ -122,7 +122,7 @@
             & .homepage__hero__link {
                 margin-top: 80px;
                 display: inline-block;
-                font-size: 14px;
+                font-size: 18px;
                 text-decoration: underline;
                 font-family: 'GTWalsheimMedium';
 
@@ -227,10 +227,10 @@
 
     & .homepage__our-divisions__text {
        // max-width: 300px;
-        font-family: 'GTWalsheimMedium';
+       font-family: 'GTWalsheimRegular';
         color: #3F7793;
         font-size: 72px;
-        line-height: 62px;
+        line-height: 68px;
         margin-right: 90px;
         
         
@@ -457,8 +457,9 @@
             }
             
         }
-
     }
+
+
 
     & .splide_1__pagination {
         height: 100px;
@@ -556,7 +557,7 @@
 
         &__header {
             margin-top: 20px;
-            font-family: 'GTWalsheimBold';
+            font-family: 'GTWalsheimRegular';
             font-size: 22pt;
             line-height: 22pt;
             letter-spacing: -6%;
@@ -564,8 +565,8 @@
 
         &__text {
             font-family: 'GTWalsheimLight';
-            font-size: 10pt;
-            line-height: 12pt;
+            font-size: 12pt;
+            line-height: 15pt;
             margin-top: 20px;
             text-align: center;
         }

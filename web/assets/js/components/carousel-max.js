@@ -14,11 +14,9 @@ let move = false; //is gallery moving now
 
 let picsArray = [...imagesPaths]; //the array length=5 for images to show
 picsArray = picsArray.slice(0, 5)
-//console.log('picsArray', picsArray, 'imagesPaths    ', imagesPaths);
 
 let basePic = totalImages - 2; //the order of the first picture in picsArray
 const carouselCenter = dxRibbon;
-//offsetMax = max offset of image (left or right)
 
 let inertiaCurrentMouseX; //current mouse x coordinate
 let inertiaPreviousMouseX; //last iteration mouse x coordinate
@@ -48,7 +46,8 @@ carousel.innerHTML = `
             return (`
             <div class="${destinationClass}-img-container">
                 <img class="${destinationClass}-expand-icon" src="${expandPath}">
-            </div>`)
+            </div>
+            `)
         }).join('')}
     </div>
     `
@@ -165,7 +164,7 @@ function defaultFullScreenStyles() {
         height: 0;
         padding: 15px;
         background-color: #404040;
-        border-radius: 20px;
+        border-radius: 30px;
         margin-right: 30px;
         align-items: center;
         justify-content: center;
@@ -244,10 +243,12 @@ const redrawCarousel = (dx) => { //changing the position of ribbonImages
 
 
 function expandImage(path, descr, link) {
-    imgFullScreenWrapper.style.top = `-15px`;
+    //imgFullScreenWrapper.style.top = `-15px`;
+    imgFullScreenWrapper.style.top = `-10px`;
+    imgFullScreenWrapper.style.zIndex = `9000`;
+
     imgFullScreenWrapper.style.left = `1vw`;
     imgFullScreenWrapper.style.width = `98%`;
-    //imgFullScreenWrapper.style.border = `2px solid red`;
     imgFullScreenWrapper.style.height = `${carouselHeight + 75}px`;
 
     
@@ -256,7 +257,6 @@ function expandImage(path, descr, link) {
 
     imgWrapper.style.width = `100%`;
     imgWrapper.style.maxHeight = `${carouselHeight}px`;
-    //imgWrapper.style.border = `2px solid blue`;
     imgWrapper.style.overflow = `hidden`;
 
 
@@ -320,43 +320,6 @@ function mouseDownActions(e) {
     mouseEnterPoint = e.offsetX;
     carousel.classList.add(`${destinationClass}_grabbed`);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function changeToc(e) {
-    console.log(window.pageYOffset);
-    
-}
-
-document.addEventListener('scroll', e => changeToc(e))
-*/
-
 
 
 
