@@ -1,6 +1,6 @@
 .footer-container {
-    padding-left: 50px; 
-    padding-right: 50px;
+    //padding-left: 50px; 
+    //padding-right: 50px;
     position: relative;
 
     & .footer__logo__container {
@@ -80,6 +80,8 @@
         
             & .column__text {
                 font-family: 'GTWalsheimMedium';
+                color: #000;
+                text-decoration: none;
                 font-size: 12pt;
                 line-height: 18pt;
                 margin-top: 20px;

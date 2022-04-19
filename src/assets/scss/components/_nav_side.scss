@@ -43,6 +43,12 @@
             writing-mode: vertical-lr;
             align-items: center;
             justify-content: space-between;
+            
+            & .sidemenu__nav__link {
+                color: #FFF;
+                text-decoration: none;
+
+            }
 
             & .sidemenu__nav__arrow-line {
                 width: 0px;

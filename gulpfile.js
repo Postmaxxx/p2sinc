@@ -4,7 +4,7 @@ const   { series, parallel, src, dest, watch }      = require('gulp'),
         del             = require('del'),
         browsersync     = require('browser-sync').create(),
         reload          = browsersync.reload,
-        tailwindcss     = require('tailwindcss'),
+        //tailwindcss     = require('tailwindcss'),
         autoprefixer    = require('gulp-autoprefixer'),
         postcss         = require('gulp-postcss'),
         //merge           = require('merge-stream'),
@@ -143,13 +143,13 @@ function scssToCssBuild() { //formatting all scss files to single 'main.css' fil
     return src('./src/assets/scss/**/*.scss') 
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(postcss([ // formatting css file for better reading comfort
+        /*.pipe(postcss([ // formatting css file for better reading comfort
             tailwindcss('./postcss.config.js')
-        ]))
+        ]))*/
         //.pipe(concat({ path: 'main.css'})) //filename
         .pipe(dest('./temp/')) //file folder
 }
-
+/*
 function tailwindCopy() { //formatting tailwind.css file to 'tailwind.css' file inside 'temp' folder
     return src('./node_modules/tailwindcss/tailwind.css')
         //.pipe(cache('./temp'))
@@ -159,11 +159,11 @@ function tailwindCopy() { //formatting tailwind.css file to 'tailwind.css' file 
         .pipe(concat({ path: 'tailwind.css'})) //filename
         .pipe(dest('./temp/')) //file folder
 }
-
+*/
 
 
 function concatStyles() { //split css files to 'bundle.css' file
-    return src(['./temp/tailwind.css', './temp/main.css'])
+    return src([/*'./temp/tailwind.css', */'./temp/main.css'])
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(concat("bundle.css")) //filename
         .pipe(sourcemaps.write('.'))
@@ -249,11 +249,11 @@ function createServer() {
 
 
 
-const build = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, scssToCssBuild, tailwindCopy, fontsConverter, jsCopyBuild), concatStyles, cssCleaner, copyCss, htmlStylesInjector, htmlMinifier)
+const build = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, scssToCssBuild, /*tailwindCopy,*/ fontsConverter, jsCopyBuild), concatStyles, cssCleaner, copyCss, htmlStylesInjector, htmlMinifier)
 exports.build = build;
 
 
-const server = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, jsCopy, fontsConverter, scssToCss), tailwindCopy, concatStyles, copyCss, createServer);
+const server = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, jsCopy, fontsConverter, scssToCss), /*tailwindCopy,*/ concatStyles, copyCss, createServer);
 exports.server = server;
 
 const test = series(scssToCss);

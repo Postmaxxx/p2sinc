@@ -6,7 +6,7 @@ import {makeSideNav} from './components/nav_side.js';
 let carousel_prop = {
     destinationClass : 'homepage__hero__carousel',
     imgWidth : 600,
-    imgGap : 50,
+    imgGap : 20,
     bgMoveSpeed : 5, //moving without dragging, defaultSpeed, px/tick
     timeToBgMove : 5000, //time to start background movement after stop in ms
     inertiaSensivity : 10, //inetria turns on when moving speed is higher
