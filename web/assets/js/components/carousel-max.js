@@ -44,17 +44,22 @@ carousel.innerHTML = `
     <div class="${destinationClass}-images-container">
         ${picsArray.map((el, index) => {
             return (`
-            <div class="${destinationClass}-img-container">
-                <img class="${destinationClass}-expand-icon" src="${expandPath}">
+            <div class="${destinationClass}-img-wrapper">
+                <div class="${destinationClass}-img-container">
+                    <img class="${destinationClass}-expand-icon" src="${expandPath}">
+                </div>
             </div>
             `)
         }).join('')}
     </div>
     `
 
+
 const ribbonImages = document.querySelector(`.${destinationClass}-images-container`); //The container for all 5 images
+const imgWrapperList = document.querySelectorAll(`.${destinationClass}-img-wrapper`); //The list of all 5 containers
 const imgContainerList = document.querySelectorAll(`.${destinationClass}-img-container`); //The list of all 5 containers
 const imgExpandIconList = document.querySelectorAll(`.${destinationClass}-expand-icon`); //The list of all 5 containers
+
 
 
 const sourceNode = document.querySelector(`.${nodeForFullsize}`);
@@ -88,19 +93,35 @@ ribbonImages.style.cssText = `
     pointer-events: none;
     `
 
-imgContainerList.forEach((el) => {
+imgWrapperList.forEach((el) => {
     el.style.cssText = `
         width: ${imgWidth}px;
         height: ${carouselHeight}px;
-        margin-left: ${imgGap/2}px; 
-        margin-right: ${imgGap/2 }px;
+        padding: 0;
+        padding-left: ${imgGap/2}px; 
+        padding-right: ${imgGap/2 }px;
+        display: inline-block;
+        pointer-events: none;
+        position: relative;
+    `
+})
+    
+
+
+
+console.log(imgContainerList); 
+
+imgContainerList.forEach((el) => {
+    el.style.cssText = `
+        width: 100%;
+        height: ${carouselHeight}px;
         padding: 0;
         box-sizing: border-box;
         display: inline-block;
-        overflow: hidden;
         background-size: auto 100%;
         background-position: 50% center;
         pointer-events: none;
+        overflow: hidden;
         `
     })
 
@@ -109,12 +130,11 @@ imgExpandIconList.forEach((el, index) => {
     el.style.cssText = `
         width: ${expandIconWidth}px;
         height: $auto;
-        position: relative;
+        position: absolute;
         top: 85%;
-        left: 10%;
+        left: ${(imgGap - expandIconWidth) / 2}px;
         pointer-events: auto;
         cursor: pointer;
-
     `
 })
 
