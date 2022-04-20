@@ -175,9 +175,14 @@ function defaultFullScreenStyles() {
         transition: ${transitionTime}s;
     `;
 
-    imgDescrLink.style.pointerEvents = 'auto';
-    imgDescrLink.style.textDecoration = 'underline';
-    imgDescrLink.style.transition = `${transitionTime}s`
+    imgDescrLink.style.cssText = `
+        pointer-events: auto;
+        color: #FFF;
+        transition: ${transitionTime}s;
+        font-family: "GTWalsheimMedium";
+        font-size: 12px;
+    `;
+
 
     carousel.style.opacity = '100%';
 }
