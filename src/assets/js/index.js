@@ -17,10 +17,11 @@ let carousel_prop = {
                     ['./assets/img/4.jpg', 'Project 4 &#8594', 'http://hotmail.com'],
                     ['./assets/img/5.jpg', 'Project 5 &#8594', 'http://p2sinc.com'],
                     ['./assets/img/6.jpg', 'Project 6 &#8594', 'http://youtube.com']],
-    expandPath : './assets/img/expand-icon.png',
+    expandPath : './assets/json/Plus_Widget.json',
     closePath : './assets/img/x.png',
     nodeForFullsize : 'content-container',
-    expandIconWidth: 25,
+    expandIconWidth: 70,
+    expandIconHeignt: 70,
     transitionTime: 1
 }
 let carousel = makeCarousel(carousel_prop);

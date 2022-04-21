@@ -1,6 +1,6 @@
 export function makeCarousel(params) {
 
-const {destinationClass, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth, nodeForFullsize, transitionTime, closePath } = params;
+const {destinationClass, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth, expandIconHeignt, nodeForFullsize, transitionTime, closePath } = params;
 const carousel = document.querySelector('.'+destinationClass)
 
 let carouselHeight = document.querySelector('.'+destinationClass).clientHeight;
@@ -46,7 +46,7 @@ carousel.innerHTML = `
             return (`
             <div class="${destinationClass}-img-wrapper">
                 <div class="${destinationClass}-img-container">
-                    <img class="${destinationClass}-expand-icon" src="${expandPath}">
+                    <lottie-player data-role="expand" class="${destinationClass}-expand-icon" autoplay loop mode="normal" src="${expandPath}" ></lottie-player>
                 </div>
             </div>
             `)
@@ -129,7 +129,7 @@ imgContainerList.forEach((el) => {
 imgExpandIconList.forEach((el, index) => {
     el.style.cssText = `
         width: ${expandIconWidth}px;
-        height: $auto;
+        height: ${expandIconHeignt}px;
         position: absolute;
         top: 85%;
         left: ${(imgGap - expandIconWidth) / 2}px;
@@ -334,7 +334,7 @@ imgFullScreenCloser.addEventListener('click', e => closeImage(e))
 
 
 function mouseDownActions(e) {
-    if (e.target.tagName === 'IMG') {
+    if (e.target.dataset.role === 'expand') {
         expandImage(e.target.dataset.path,e.target.dataset.descr,e.target.dataset.link);
     }
 

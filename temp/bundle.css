@@ -327,7 +327,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         color: #FFF;
         font-family: 'GTWalsheimMedium';
         font-size: 10pt;
-        margin-top: 10px; }
+        margin-top: 10px;
+        border: none;
+        cursor: pointer; }
       .footer-container .footer__columns__column .column__socials {
         margin-top: 20px; }
         .footer-container .footer__columns__column .column__socials__item {
@@ -572,10 +574,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         margin-left: auto;
         position: absolute;
         top: -75px;
-        right: -20px;
-        display: flex;
-        align-items: center;
-        justify-content: center; }
+        right: -20px; }
+        @media (max-width: 575px) {
+          .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_eng {
+            width: 79px;
+            top: -52px;
+            right: -15px; } }
       .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cx {
         width: 190px;
         height: auto;
@@ -583,6 +587,11 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         position: absolute;
         top: -80px;
         right: -52px; }
+        @media (max-width: 575px) {
+          .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cx {
+            width: 137px;
+            top: -58px;
+            right: -38px; } }
       .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cm {
         width: 150px;
         height: auto;
@@ -590,6 +599,11 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         position: absolute;
         top: -115px;
         right: -30px; }
+        @media (max-width: 575px) {
+          .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cm {
+            width: 108px;
+            top: -85px;
+            right: -20px; } }
 
 .splide {
   margin-top: 70px;
@@ -725,8 +739,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     .homepage__connect .homepage__connect__item:last-child {
       margin-right: 0; }
     @media (max-width: 768px) {
+      .homepage__connect .homepage__connect__item:nth-child(3) {
+        margin-right: 30px; } }
+    @media (max-width: 768px) {
       .homepage__connect .homepage__connect__item:nth-child(2) {
-        order: 3; } }
+        order: 3;
+        margin-right: 0px; } }
     .homepage__connect .homepage__connect__item__logo_join {
       width: 100px;
       height: auto;
@@ -778,7 +796,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         color: #FFF;
         font-family: 'GTWalsheimMedium';
         font-size: 10pt;
-        margin-top: 20px; }
+        margin-top: 20px;
+        border: none;
+        cursor: pointer; }
     .homepage__connect .homepage__connect__item__link {
       font-family: 'GTWalsheimBold';
       color: #FFF;

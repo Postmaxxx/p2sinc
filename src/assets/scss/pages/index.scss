@@ -322,9 +322,13 @@
                 position: absolute;
                 top: -75px;
                 right: -20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+
+                @include respond-to(xs) {
+                    width: 79px;
+                    top: -52px;
+                    right: -15px;
+                }
+
             }
     
             &__logo_cx {
@@ -334,6 +338,12 @@
                 position: absolute;
                 top: -80px;
                 right: -52px;
+                
+                @include respond-to(xs) {
+                    width: 137px;
+                    top: -58px;
+                    right: -38px;
+                }
             }
     
             &__logo_cm {
@@ -343,6 +353,12 @@
                 position: absolute;
                 top: -115px;
                 right: -30px;
+                
+                @include respond-to(xs) {
+                    width: 108px;
+                    top: -85px;
+                    right: -20px;
+                }
             }
         }
     
@@ -546,9 +562,17 @@
         }
     
     
+        &:nth-child(3) {
+            @include respond-to(sm) {
+                margin-right: 30px;
+            }
+        }
+
+
         &:nth-child(2) {
             @include respond-to(sm) {
                 order: 3;
+                margin-right: 0px;
             }
         }
 
@@ -626,6 +650,8 @@
                 font-family: 'GTWalsheimMedium';
                 font-size: 10pt;
                 margin-top: 20px;
+                border: none;
+                cursor: pointer;
             }
 
 
