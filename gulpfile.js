@@ -109,6 +109,13 @@ function vidCopy() { //copy videos to 'web/assets/vid' folder
 }
 
 
+/* -----------------------  JSON  --------------------------- */
+
+function jsonCopy() { //copy videos to 'web/assets/vid' folder
+    return src(['./src/assets/json/**/*.*'])
+        .pipe(dest('./web/assets/json/'))
+        .pipe(browsersync.stream());
+}
 
 /* -----------------------  Fonts  --------------------------- */
 
@@ -228,7 +235,7 @@ function createServer() {
     browsersync.init({
         server: {
             baseDir: "./web/",
-            index: "homepage.html",
+            index: "index.html",
             port: 3000,
             reloadDelay: 0,
             reloadOnRestart: true,
@@ -241,6 +248,7 @@ function createServer() {
     watch("./src/assets/js/**/*.*").on('change', series(jsCopy));
     watch(["./src/assets/img/**/*.*", "!./src/assets/img/**/*.svg" ]).on('all', series(imgCopy, reload));
     watch(["./src/assets/vid/**/*.*"]).on('all', series(vidCopy, reload));
+    watch(["./src/assets/json/**/*.*"]).on('all', series(jsonCopy, reload));
     watch("./src/assets/img/**/*.svg").on('all', series(createSvgSprite));
     watch("./src/assets/fonts/**/*.ttf").on('all', series(fontsConverter));
 };
@@ -249,11 +257,11 @@ function createServer() {
 
 
 
-const build = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, scssToCssBuild, /*tailwindCopy,*/ fontsConverter, jsCopyBuild), concatStyles, cssCleaner, copyCss, htmlStylesInjector, htmlMinifier)
+const build = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, jsonCopy, createSvgSprite, scssToCssBuild, /*tailwindCopy,*/ fontsConverter, jsCopyBuild), concatStyles, cssCleaner, copyCss, htmlStylesInjector, htmlMinifier)
 exports.build = build;
 
 
-const server = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, createSvgSprite, jsCopy, fontsConverter, scssToCss), /*tailwindCopy,*/ concatStyles, copyCss, createServer);
+const server = series(cleanFolders, parallel(compileTwig, imgCopy, vidCopy, jsonCopy, createSvgSprite, jsCopy, fontsConverter, scssToCss), /*tailwindCopy,*/ concatStyles, copyCss, createServer);
 exports.server = server;
 
 const test = series(scssToCss);
