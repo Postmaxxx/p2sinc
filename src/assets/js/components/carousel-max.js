@@ -23,7 +23,7 @@ let inertiaPreviousMouseX; //last iteration mouse x coordinate
 let inertiaSpeedX = 0; //speed of moving while inertia, decreasing by *inertiaStep
 let inertiaCounter; //setinterval for declining speed while inertia
 let carouselInertionTimer; //setinterva for calculating mouse speed
-
+let expandImageShown = false; //is Espand image shown now
 
 let bgMove; //moving without dragging, speed
 let bgMoveCounter; //setinterval for background movement
@@ -109,7 +109,7 @@ imgWrapperList.forEach((el) => {
 
 
 
-console.log(imgContainerList); 
+//console.log(imgContainerList); 
 
 imgContainerList.forEach((el) => {
     el.style.cssText = `
@@ -268,22 +268,19 @@ const redrawCarousel = (dx) => { //changing the position of ribbonImages
 
 
 function expandImage(path, descr, link) {
+
     //imgFullScreenWrapper.style.top = `-15px`;
     imgFullScreenWrapper.style.top = `-10px`;
     imgFullScreenWrapper.style.zIndex = `9000`;
 
     imgFullScreenWrapper.style.left = `1vw`;
     imgFullScreenWrapper.style.width = `98%`;
-    imgFullScreenWrapper.style.height = `${carouselHeight + 75}px`;
-
-    
-
+    imgFullScreenWrapper.style.height = `${carouselHeight + 285}px`;
 
 
     imgWrapper.style.width = `100%`;
-    imgWrapper.style.maxHeight = `${carouselHeight}px`;
+    imgWrapper.style.maxHeight = `${carouselHeight + 285}px`;
     imgWrapper.style.overflow = `hidden`;
-
 
 
     imgFullScreenImage.style.width = `100%`;
@@ -291,9 +288,6 @@ function expandImage(path, descr, link) {
     //imgFullScreenImage.style.objectFit = `cover`;
     imgFullScreenImage.style.objectPosition = `100% 100%`;
     imgFullScreenImage.style.height = `auto`;
-
-
-
 
 
     imgDescr.style.position = `relative`;
@@ -314,9 +308,6 @@ function expandImage(path, descr, link) {
     imgFullScreenCloser.style.display = 'block'
 
     carousel.style.opacity = '50%';
-
-    console.log(imgFullScreenWrapper.style.background);
-
 }
 
 
@@ -324,8 +315,11 @@ function expandImage(path, descr, link) {
 
 function closeImage() {
     defaultFullScreenStyles();
-    imgFullScreenCloser.removeEventListener('click', e => closeImage(e))
-
+    expandImageShown = false;
+    setTimeoutToMove();
+    imgFullScreenCloser.removeEventListener('click', e => {
+        closeImage(e);
+    })
 }
 
 
@@ -335,17 +329,18 @@ imgFullScreenCloser.addEventListener('click', e => closeImage(e))
 
 function mouseDownActions(e) {
     if (e.target.dataset.role === 'expand') {
+        expandImageShown = true;
         expandImage(e.target.dataset.path,e.target.dataset.descr,e.target.dataset.link);
+        clearTimeoutToMove();
     }
 
     clearInterval(inertiaCounter); //stop the inertia
-    clearTimeout(bgMoveCoundown); //stop the countdown
+    //clearTimeout(bgMoveCoundown); //stop the countdown
     bgMove = 0;
     move = true;
     mouseEnterPoint = e.offsetX;
     carousel.classList.add(`${destinationClass}_grabbed`);
 }
-
 
 
 carousel.addEventListener('mousedown', e => mouseDownActions(e))
@@ -360,6 +355,27 @@ function mouseMoveActions(e) {
 carousel.addEventListener('mousemove', e => mouseMoveActions(e))
 
 
+function setTimeoutToMove() {
+    if (!bgMoveCoundown) {
+        bgMoveCoundown = setTimeout(() => {
+            console.log("move again");
+            bgMove = bgMoveSpeed;
+            bgMovement(bgMove);
+            clearTimeoutToMove();
+        }, timeToBgMove);
+        console.log("start cndn ",bgMoveCoundown);
+    }
+}
+
+
+
+function clearTimeoutToMove() {
+    if (bgMoveCoundown) {
+        console.log("delete contdown ", bgMoveCoundown);
+        clearTimeout(bgMoveCoundown);
+        bgMoveCoundown = undefined;
+    }
+}
 
 
 function inertiaMovement(dx) {
@@ -370,6 +386,7 @@ function inertiaMovement(dx) {
         if (Math.abs(dx) <= 1) {
             inertiaSpeedX = 0;
             clearInterval(inertiaCounter);
+            setTimeoutToMove();
         } else {
             dxRibbon = dxRibbon - dx/25;
             redrawCarousel(0);
@@ -393,6 +410,7 @@ function bgMovement(dx) {
 
 const stopMove = (e) => { //stop move the carousel
     move = false;
+    //restartMoveTimer = true;
     dxRibbon = dxRibbon + dxMouse; //fixing the offset
     dxMouse = 0; 
  
@@ -402,16 +420,18 @@ const stopMove = (e) => { //stop move the carousel
     }
     carousel.classList.remove(`${destinationClass}_grabbed`)
 
-    //timeToBgMove
-    bgMoveCoundown = setTimeout((e) => {
-        bgMove = bgMoveSpeed;
-        bgMovement(bgMove);
-    }, timeToBgMove);
 }
 
 
 
-carousel.addEventListener('mouseup', e => stopMove(e));
+carousel.addEventListener('mouseup', e => {
+    if (!expandImageShown) {
+        setTimeoutToMove();
+    }
+    stopMove(e);
+});
+
+
 carousel.addEventListener('mouseout', e => stopMove(e));
 
 carouselInertionTimer = setInterval((e) => { //check mouse speed every 100ms
@@ -433,13 +453,13 @@ function destroy() {
     carousel.removeEventListener('mousemove', e => mouseMoveActions(e))
     carousel.removeEventListener('mouseup', e => stopMove(e));
     carousel.removeEventListener('mouseout', e => stopMove(e));
+    carousel.removeEventListener('mouseout', e => stopMove(e));
     imgFullScreenCloser.removeEventListener('click', e => closeImage())
-
+    
     clearInterval(bgMoveCounter);
     clearInterval(carouselInertionTimer);
     clearInterval(inertiaCounter); 
     clearTimeout(bgMoveCoundown); 
-
 
 }
 

@@ -1,4 +1,3 @@
-
 .footer-container {
     //padding-left: 50px; 
     //padding-right: 50px;
@@ -111,6 +110,8 @@
                 font-size: 12pt;
                 line-height: 14pt;
                 margin-bottom: 20px;
+                color: #3F7793;
+
             }
         
 
@@ -125,7 +126,7 @@
             }
         
             & .column__button {
-                background-color: #000;
+                background-color: #3F7793;
                 width: 120px;
                 height: 25px;
                 border-radius: 12px;
@@ -133,20 +134,29 @@
                 font-family: 'GTWalsheimMedium';
                 font-size: 10pt;
                 margin-top: 10px;
-                border: none;
+                border: 2px solid #3F7793;
                 cursor: pointer;
+
+                &:hover {
+                    color: #3F7793;
+                    background-color: white;
+                }
             }
         
             & .column__socials {
                 margin-top: 20px;
+                margin-left: -5px;
         
                 &__item {
                     display: inline-block;
-                    margin-right: 5px;
+                    margin-right: 0px;
         
                     &__logo {
-                        height: 30px;
-                        width: 30px;
+                        height: 45px;
+                        width: 45px;
+                        
+                       // height: 20px;
+                       // width: 20px;
                     }
         
                 }
@@ -155,24 +165,28 @@
 
 
             
-        & .column__assistant-link {
-            display: none;
-            //  height: 100%;
+            & .column__assistant-link {
+                display: none;
+                //  height: 100%;
 
-            @include respond-to(sm) {
-                display: block;
-                bottom: 0;
-                position: absolute;
-            }
+                @include respond-to(sm) {
+                    display: block;
+                    bottom: 0;
+                    position: absolute;
+                }
+            
+                & .column__assistant-image {
+                        width: 50px;
+                        height: 50px;
+                }
         
-            & .column__assistant-image {
-                    width: 50px;
-                    height: 50px;
             }
-    
-    }
 
             
+        }
+
+        & .wide-colimn {
+            margin-right: 60px;
         }
 
         

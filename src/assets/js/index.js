@@ -31,3 +31,70 @@ makeSideNav();
 
 
 
+
+
+
+
+
+
+
+
+
+
+  let iconMenu1 = document.querySelector('.homepage__our-divisions__item__logo_eng');
+  let animationMenu1 = bodymovin.loadAnimation({
+          container: iconMenu1,
+          renderer: 'svg',
+          loop: true,
+          autoplay: false,
+          path: "./assets/json/ENG_Widget.json",
+          initialSegment: [34, 34],
+  });
+  
+  iconMenu1.addEventListener('mouseenter', (e) => {
+    animationMenu1.playSegments([0, 34], true);
+  });
+  iconMenu1.addEventListener('mouseleave', (e) => {
+    animationMenu1.goToAndStop(34, 34)
+  });
+
+
+
+
+
+  let iconMenu2 = document.querySelector('.homepage__our-divisions__item__logo_cx');
+  let animationMenu2 = bodymovin.loadAnimation({
+          container: iconMenu2,
+          renderer: 'svg',
+          loop: true,
+          autoplay: false,
+          path: "./assets/json/Cx Widget.json",
+          initialSegment: [54, 97],
+  });
+  
+  iconMenu2.addEventListener('mouseenter', (e) => {
+    animationMenu2.playSegments([0, 97], true);
+  });
+
+  iconMenu2.addEventListener('mouseleave', (e) => {
+    animationMenu2.goToAndStop(54, 97)
+  });
+
+
+  let iconMenu3 = document.querySelector('.homepage__our-divisions__item__logo_cm');
+  let animationMenu3 = bodymovin.loadAnimation({
+          container: iconMenu3,
+          renderer: 'svg',
+          loop: true,
+          autoplay: false,
+          path: "./assets/json/CM_Widget.json",
+          initialSegment: [34, 55],
+  });
+  
+  iconMenu3.addEventListener('mouseenter', (e) => {
+    animationMenu3.playSegments([0, 55], true);
+  });
+
+  iconMenu3.addEventListener('mouseleave', (e) => {
+    animationMenu3.goToAndStop(34, 55)
+  });

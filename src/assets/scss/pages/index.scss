@@ -599,7 +599,7 @@
         &__header {
             font-family: 'GTWalsheimRegular';
             font-size: 22pt;
-            line-height: 22pt;
+            line-height: 30pt;
             letter-spacing: -6%;
         }
 
@@ -642,7 +642,7 @@
             }
 
             &__button {
-                background-color: #000;
+                background-color: #3F7793;
                 width: 100%;
                 height: 25px;
                 border-radius: 12px;
@@ -650,8 +650,14 @@
                 font-family: 'GTWalsheimMedium';
                 font-size: 10pt;
                 margin-top: 20px;
-                border: none;
+                border: 2px solid white;
                 cursor: pointer;
+
+            }
+            &__button:hover {
+                background-color: white;
+                background-color: white;
+                color: #3F7793;
             }
 
 

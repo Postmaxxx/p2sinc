@@ -312,7 +312,8 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-family: 'GTWalsheimBold';
         font-size: 12pt;
         line-height: 14pt;
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        color: #3F7793; }
       .footer-container .footer__columns__column .column__text {
         font-family: 'GTWalsheimLight';
         color: #000;
@@ -320,7 +321,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-size: 12pt;
         line-height: 18pt; }
       .footer-container .footer__columns__column .column__button {
-        background-color: #000;
+        background-color: #3F7793;
         width: 120px;
         height: 25px;
         border-radius: 12px;
@@ -328,16 +329,20 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-family: 'GTWalsheimMedium';
         font-size: 10pt;
         margin-top: 10px;
-        border: none;
+        border: 2px solid #3F7793;
         cursor: pointer; }
+        .footer-container .footer__columns__column .column__button:hover {
+          color: #3F7793;
+          background-color: white; }
       .footer-container .footer__columns__column .column__socials {
-        margin-top: 20px; }
+        margin-top: 20px;
+        margin-left: -5px; }
         .footer-container .footer__columns__column .column__socials__item {
           display: inline-block;
-          margin-right: 5px; }
+          margin-right: 0px; }
           .footer-container .footer__columns__column .column__socials__item__logo {
-            height: 30px;
-            width: 30px; }
+            height: 45px;
+            width: 45px; }
       .footer-container .footer__columns__column .column__assistant-link {
         display: none; }
         @media (max-width: 768px) {
@@ -348,6 +353,8 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         .footer-container .footer__columns__column .column__assistant-link .column__assistant-image {
           width: 50px;
           height: 50px; }
+    .footer-container .footer__columns .wide-colimn {
+      margin-right: 60px; }
 
 .margin-left {
   margin-left: 80px; }
@@ -762,7 +769,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     .homepage__connect .homepage__connect__item__header {
       font-family: 'GTWalsheimRegular';
       font-size: 22pt;
-      line-height: 22pt;
+      line-height: 30pt;
       letter-spacing: -6%; }
     .homepage__connect .homepage__connect__item__header_join {
       margin-top: 95px; }
@@ -789,7 +796,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         .homepage__connect .homepage__connect__item__form__input::placeholder {
           color: #FFF; }
       .homepage__connect .homepage__connect__item__form__button {
-        background-color: #000;
+        background-color: #3F7793;
         width: 100%;
         height: 25px;
         border-radius: 12px;
@@ -797,8 +804,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-family: 'GTWalsheimMedium';
         font-size: 10pt;
         margin-top: 20px;
-        border: none;
+        border: 2px solid white;
         cursor: pointer; }
+      .homepage__connect .homepage__connect__item__form__button:hover {
+        background-color: white;
+        background-color: white;
+        color: #3F7793; }
     .homepage__connect .homepage__connect__item__link {
       font-family: 'GTWalsheimBold';
       color: #FFF;
