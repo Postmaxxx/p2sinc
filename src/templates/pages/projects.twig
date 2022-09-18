@@ -1,0 +1,218 @@
+{% extends "../_layout.twig" %}
+{% set pageTitle = 'P2S Inc | Projects | P2S Inc' %}
+{% block styles %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+{% endblock styles %}
+
+{% set pageName = 'projects' %}
+
+
+{% set nav_side_navs = [
+    {
+        text: "WE ARE P2S INC.",
+        block: "homepage__hero",
+        link_to: "#homepage__our-divisions"
+    },
+    {
+        text: "OUR DIVISIONS",
+        block: "homepage__our-divisions",
+        link_to: "#splide"
+    },
+    {
+        text: "NEWS",
+        block: "splide",
+        link_to: "#homepage__connect"
+    },
+    {
+        text: "JOIN US",
+        block: "homepage__connect",
+        link_to: "#footer-container"
+    }
+    ]
+    %}
+
+
+{% block content %}
+    {% include '../components/_nav_side.twig' with nav_side_navs %}
+    <div class="fade-block"></div>
+    <div class='content-container'>
+        <div class="homepage__hero" id="homepage__hero">
+            <div class="homepage__hero__left-block margin-left">
+                <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo" class="homepage__hero__logo">
+                <div class="homepage__hero__text-container">
+                    <h1 class="homepage__hero__title">We Are<br> P2S Inc.</h1>
+                    <p class="homepage__hero__text">Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.</p>
+                    <a href='#' class="homepage__hero__link">learn more about us  &#8594</a>
+                </div>
+            </div>
+            <div class="homepage__hero__right-block">
+                <div class="homepage__hero__carousel_1"></div>
+            </div>
+        </div>
+
+
+        <section class="gallery_projects">
+            <form class="projects__categories" id="projects__categories">
+                <div class="categories__chapter">
+                    <h3>Divisions</h3>
+                    <div class="categories__list">
+                        <div class="category">
+                            <input type="checkbox" name="cb_engineering_div" id="cb_engineering_div">
+                            <label class="category__checkbox" for="cb_engineering_div">engineering</label>
+                            <div class="circle_green"></div>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_comissioning_div" id="cb_comissioning_div">
+                            <label class="category__checkbox" for="cb_comissioning_div">comissioning</label>
+                            <div class="circle_blue"></div>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_construction_management_div" id="cb_construction_management_div">
+                            <label class="category__checkbox" for="cb_construction_management_div">construction management</label>
+                            <div class="circle_orange"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="categories__chapter">
+                    <h3>Markets</h3>
+                    <div class="categories__list columns_2">
+                        <div class="category">
+                            <input type="checkbox" name="cb_public_university" id="cb_public_university">
+                            <label class="category__checkbox" for="cb_public_university">public university</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_speciality_manufacturing" id="cb_speciality_manufacturing">
+                            <label class="category__checkbox" for="cb_speciality_manufacturing">speciality manufacturing</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_healthcare" id="cb_healthcare">
+                            <label class="category__checkbox" for="cb_healthcare">healthcare</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_private_university" id="cb_private_university">
+                            <label class="category__checkbox" for="cb_private_university">private university</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_ports_harbors" id="cb_ports_harbors">
+                            <label class="category__checkbox" for="cb_ports_harbors">ports & harbors</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_miscellaneous" id="cb_miscellaneous">
+                            <label class="category__checkbox" for="cb_miscellaneous">miscellaneous</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_federal" id="cb_federal">
+                            <label class="category__checkbox" for="cb_federal">federal</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_aerospace" id="cb_aerospace">
+                            <label class="category__checkbox" for="cb_aerospace">aerospace</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_aviation" id="cb_aviation">
+                            <label class="category__checkbox" for="cb_aviation">aviation</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_energyy" id="cb_energyy">
+                            <label class="category__checkbox" for="cb_energyy">energy</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_k12" id="cb_k12">
+                            <label class="category__checkbox" for="cb_k12">k-12</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_community_colleges" id="cb_community_colleges">
+                            <label class="category__checkbox" for="cb_community_colleges">community colleges</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="categories__chapter">
+                    <h3>Services</h3>
+                    <div class="categories__list columns_2">
+                        <div class="category">
+                            <input type="checkbox" name="cb_comissioning" id="cb_comissioning">
+                            <label class="category__checkbox" for="cb_comissioning">comissioning</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_constuction_management" id="cb_constuction_management">
+                            <label class="category__checkbox" for="cb_constuction_management">constuction management</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_speciality_lighting_design" id="cb_speciality_lighting_design">
+                            <label class="category__checkbox" for="cb_speciality_lighting_design">speciality lighting design</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_energy" id="cb_energy">
+                            <label class="category__checkbox" for="cb_energy">energy</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_science_technology" id="cb_science_technology">
+                            <label class="category__checkbox" for="cb_science_technology">science & technology</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_lv_technology" id="cb_lv_technology">
+                            <label class="category__checkbox" for="cb_lv_technology">LV technology</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_new_service_1" id="cb_new_service_1">
+                            <label class="category__checkbox" for="cb_new_service_1">new service 1</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_new_service_2" id="cb_new_service_2">
+                            <label class="category__checkbox" for="cb_new_service_2">new service 2</label>
+                        </div>
+                        <div class="category">
+                            <input type="checkbox" name="cb_new_service_3" id="cb_new_service_3">
+                            <label class="category__checkbox" for="cb_new_service_3">new service 3</label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="submit-area">
+                <div>
+                    <span>183</span>
+                    <p>Projects Shown</p>
+                </div>
+                <button type="submit" form="projects__categories">Submit Filter &#8594</button>
+            </div>
+        </section>
+
+
+    
+        <div class="homepage__connect" id="homepage__connect">
+            <div class="homepage__connect__item">
+                <lottie-player class="homepage__connect__item__logo_join" autoplay loop mode="normal" src="./assets/json/JoinUs_Widget.json" ></lottie-player>
+                <h3 class="homepage__connect__item__header homepage__connect__item__header_join">Join Us!</h3>
+                <p class="homepage__connect__item__text">We're hiring for a broad range 
+                    of positions. Take a look at our Openings page to learn more and apply!</p>
+                <a class="homepage__connect__item__link" href='#'>Openings &#8594</a>
+            </div>
+            <div class="homepage__connect__item">
+                <lottie-player class="homepage__connect__item__logo_stay" autoplay loop mode="normal" src="./assets/json/StayintheMix_Widget.json" ></lottie-player>
+                <h3 class="homepage__connect__item__header homepage__connect__item__header_stay">Stay In <br> the Mix!</h3>
+                <p class="homepage__connect__item__text">Sign up for the P2S Magazine</p>
+                <form action="" class="homepage__connect__item__form" id="homepage__connect__form">
+                    <input class="homepage__connect__item__form__input" type="text" required placeholder="Name *"></input>
+                    <input class="homepage__connect__item__form__input" type="email" required placeholder="Email *"></input>
+                    <button class="homepage__connect__item__form__button" type="submit" form="homepage__connect__form">Submit &#8594</button>
+                </form>
+            </div>
+            <div class="homepage__connect__item">
+                <lottie-player class="homepage__connect__item__logo_get" autoplay loop mode="normal" src="./assets/json/GetinTouch_Widget.json" ></lottie-player>
+                <h3 class="homepage__connect__item__header homepage__connect__item__header_get">Get In <br> Touch!</h3>
+                <p class="homepage__connect__item__text">We want to hear from you! Fill
+                    out the form and we'll get back to you as soon as we can.</p>
+                <a class="homepage__connect__item__link" href='#'>Form &#8594</a>
+            </div>
+
+        </div>
+    </div>
+    
+{% endblock content %} 
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script type='module' src='./assets/js/projects.js'></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js" integrity="sha512-ilxj730331yM7NbrJAICVJcRmPFErDqQhXJcn+PLbkXdE031JJbcK87Wt4VbAK+YY6/67L+N8p7KdzGoaRjsTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock scripts %} 
