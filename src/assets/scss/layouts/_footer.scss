@@ -110,8 +110,7 @@
                 font-size: 12pt;
                 line-height: 14pt;
                 margin-bottom: 20px;
-                color: #3F7793;
-
+                color: $black;
             }
         
 
@@ -126,7 +125,7 @@
             }
         
             & .column__button {
-                background-color: #3F7793;
+                background-color: $black;
                 width: 120px;
                 height: 25px;
                 border-radius: 12px;
@@ -134,12 +133,13 @@
                 font-family: 'GTWalsheimMedium';
                 font-size: 10pt;
                 margin-top: 10px;
-                border: 2px solid #3F7793;
+                border: 2px solid $black;
                 cursor: pointer;
 
                 &:hover {
                     color: #3F7793;
-                    background-color: white;
+                    border-color: $white;
+                    background-color: $white;
                 }
             }
         

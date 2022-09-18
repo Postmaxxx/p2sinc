@@ -1,10 +1,10 @@
 {% extends "../_layout.twig" %}
-{% set pageTitle = 'P2S Inc | Home | P2S Inc' %}
+{% set pageTitle = 'P2S Inc | About Us | P2S Inc' %}
 {% block styles %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
 {% endblock styles %}
 
-{% set pageName = 'index' %}
+{% set pageName = 'about_us' %}
 
 
 {% set nav_side_navs = [
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="splide" id="splide">
+        <div class="splide-1" id="splide_about-us_1">
             <div class="splide__track">
                   <div class="splide__list">
                       <div class="splide__slide">
@@ -154,11 +154,11 @@
 {% endblock content %} 
 
 {% block scripts %}
-    <script type='module' src='./assets/js/index.js'></script>
+    <script type='module' src='./assets/js/about_us.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
     <script>
         document.addEventListener( 'DOMContentLoaded', function() {
-            var splide = new Splide('.splide', {
+            var splide = new Splide('.splide-1', {
                 type: "loop",
                 perPag: 1,
                 clones:1, 

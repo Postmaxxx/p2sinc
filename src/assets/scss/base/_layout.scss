@@ -38,15 +38,30 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     margin-right: auto;
 }
 
-.color_green {
-    color:  $green;
+.color_green-logo {
+    color:  $green_logo;
 }
 
-.color_blue {
-    color:  $green;
+.color_blue-logo {
+    color:  $blue_logo;
 }
 
-.color_orange {
-    color:  $green;
+.color_orange-logo {
+    color:  $orange_logo;
 }
 
+.fade-block {
+    z-index: 1000;
+    opacity: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    pointer-events: none;
+
+    &.fade {
+        opacity: .5;
+    }
+}

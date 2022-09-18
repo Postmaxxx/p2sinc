@@ -1,6 +1,7 @@
 export function makeCarousel(params) {
 
 const {destinationClass, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth, expandIconHeignt, nodeForFullsize, transitionTime, closePath } = params;
+const fadeBlock = document.querySelector(".fade-block");
 const carousel = document.querySelector('.'+destinationClass)
 
 let carouselHeight = document.querySelector('.'+destinationClass).clientHeight;
@@ -144,7 +145,7 @@ function defaultFullScreenStyles() {
     imgFullScreenWrapper.style.cssText = `
         margin: 0;
         padding: 0;
-        position: absolute;
+        position: fixed;
         top: ${carouselHeight / 2}px;
         left: 50%;
         width: 0px;
@@ -204,7 +205,8 @@ function defaultFullScreenStyles() {
     `;
 
 
-    carousel.style.opacity = '100%';
+    //carousel.style.opacity = '100%';
+    fadeBlock.classList.remove("fade");
 }
 
 defaultFullScreenStyles();
@@ -307,7 +309,8 @@ function expandImage(path, descr, link) {
     imgFullScreenCloser.style.width = `25px`;
     imgFullScreenCloser.style.display = 'block'
 
-    carousel.style.opacity = '50%';
+    //carousel.style.opacity = '50%';
+    fadeBlock.classList.add("fade");
 }
 
 

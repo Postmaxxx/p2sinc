@@ -43,14 +43,27 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
   margin-left: auto;
   margin-right: auto; }
 
-.color_green {
+.color_green-logo {
   color: #00C496; }
 
-.color_blue {
-  color: #00C496; }
+.color_blue-logo {
+  color: #009CCD; }
 
-.color_orange {
-  color: #00C496; }
+.color_orange-logo {
+  color: #FB9A2D; }
+
+.fade-block {
+  z-index: 1000;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  pointer-events: none; }
+  .fade-block.fade {
+    opacity: .5; }
 
 @font-face {
   font-family: "Poppins-700";
@@ -336,7 +349,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-size: 12pt;
         line-height: 14pt;
         margin-bottom: 20px;
-        color: #3F7793; }
+        color: #000; }
       .footer-container .footer__columns__column .column__text {
         font-family: 'GTWalsheimLight';
         color: #000;
@@ -344,7 +357,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-size: 12pt;
         line-height: 18pt; }
       .footer-container .footer__columns__column .column__button {
-        background-color: #3F7793;
+        background-color: #000;
         width: 120px;
         height: 25px;
         border-radius: 12px;
@@ -352,11 +365,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-family: 'GTWalsheimMedium';
         font-size: 10pt;
         margin-top: 10px;
-        border: 2px solid #3F7793;
+        border: 2px solid #000;
         cursor: pointer; }
         .footer-container .footer__columns__column .column__button:hover {
           color: #3F7793;
-          background-color: white; }
+          border-color: #FFF;
+          background-color: #FFF; }
       .footer-container .footer__columns__column .column__socials {
         margin-top: 20px;
         margin-left: -5px; }
@@ -378,6 +392,467 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
           height: 50px; }
     .footer-container .footer__columns .wide-colimn {
       margin-right: 60px; }
+
+body.about_us .margin-left {
+  margin-left: 80px; }
+  @media (max-width: 1200px) {
+    body.about_us .margin-left {
+      margin-left: 70px; } }
+  @media (max-width: 990px) {
+    body.about_us .margin-left {
+      margin-left: 60px; } }
+  @media (max-width: 768px) {
+    body.about_us .margin-left {
+      margin-left: 50px; } }
+  @media (max-width: 575px) {
+    body.about_us .margin-left {
+      margin-left: 40px; } }
+
+body.about_us .homepage__hero {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  body.about_us .homepage__hero .homepage__hero__left-block {
+    width: 42%; }
+    body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__logo {
+      margin-top: 40px;
+      width: 120px; }
+      @media (max-width: 990px) {
+        body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__logo {
+          margin-top: 40px;
+          width: 100px; } }
+    body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container {
+      margin-top: 70px;
+      padding-right: 90px;
+      font-family: 'GTWalsheimRegular';
+      color: #3F7793; }
+      @media (max-width: 1200px) {
+        body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container {
+          padding-right: 40px; } }
+      @media (max-width: 768px) {
+        body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container {
+          padding-right: 35px; } }
+      @media (max-width: 575px) {
+        body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container {
+          padding-right: 25px; } }
+      body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__title {
+        font-family: 'GTWalsheimBold';
+        font-size: 72px;
+        line-height: 62px; }
+        @media (max-width: 1200px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__title {
+            font-size: 64px;
+            line-height: 58px; } }
+        @media (max-width: 990px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__title {
+            font-size: 46px;
+            line-height: 36px; } }
+        @media (max-width: 768px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__title {
+            font-size: 40px;
+            line-height: 40px; } }
+        @media (max-width: 575px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__title {
+            font-size: 30px;
+            line-height: 30px; } }
+      body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__text {
+        font-family: 'GTWalsheimBold';
+        margin-top: 40px;
+        font-size: 28px;
+        line-height: 30px; }
+        @media (max-width: 1200px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__text {
+            font-size: 22px;
+            line-height: 20px; } }
+        @media (max-width: 990px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__text {
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 20px; } }
+        @media (max-width: 768px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__text {
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 18px; } }
+        @media (max-width: 575px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__text {
+            margin-top: 25px;
+            font-size: 15px;
+            line-height: 15px; } }
+      body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__link {
+        margin-top: 80px;
+        display: inline-block;
+        font-size: 18px;
+        text-decoration: underline;
+        font-family: 'GTWalsheimMedium';
+        color: #3F7793; }
+        @media (max-width: 1400px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__link {
+            margin-top: 70px; } }
+        @media (max-width: 990px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__link {
+            margin-top: 50px;
+            font-size: 13px; } }
+        @media (max-width: 768px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__link {
+            margin-top: 30px;
+            font-size: 12px; } }
+        @media (max-width: 575px) {
+          body.about_us .homepage__hero .homepage__hero__left-block .homepage__hero__text-container .homepage__hero__link {
+            margin-top: 30px;
+            font-size: 9px; } }
+  body.about_us .homepage__hero .homepage__hero__right-block {
+    position: relative;
+    margin-left: auto;
+    width: 60%; }
+    body.about_us .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
+      margin: 0;
+      margin-top: 0;
+      padding: 0;
+      margin-left: 0;
+      cursor: grab;
+      display: flex;
+      width: 100% !important;
+      height: 600px !important; }
+      @media (max-width: 1200px) {
+        body.about_us .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
+          height: 550px !important; } }
+      @media (max-width: 768px) {
+        body.about_us .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
+          height: 550px !important; } }
+      @media (max-width: 575px) {
+        body.about_us .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
+          height: 450px !important; } }
+    body.about_us .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1_grabbed {
+      cursor: grabbing; }
+
+body.about_us .homepage__our-divisions {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 80px; }
+  @media (max-width: 990px) {
+    body.about_us .homepage__our-divisions {
+      flex-direction: column; } }
+  body.about_us .homepage__our-divisions .homepage__our-divisions_header {
+    font-family: 'GTWalsheimBold';
+    color: #3F7793;
+    font-size: 72px;
+    line-height: 68px;
+    width: calc(40% - 80px); }
+    @media (max-width: 1200px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions_header {
+        font-size: 64px;
+        line-height: 58px;
+        width: calc(45% + 120px); } }
+    @media (max-width: 990px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions_header {
+        font-size: 46px;
+        line-height: 36px;
+        width: auto; } }
+    @media (max-width: 768px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions_header {
+        font-size: 40px;
+        line-height: 40px; } }
+    @media (max-width: 575px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions_header {
+        font-size: 30px;
+        line-height: 30px; } }
+  body.about_us .homepage__our-divisions .homepage__our-divisions__logos {
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding-right: 30px; }
+    @media (max-width: 1200px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos {
+        width: 100%;
+        justify-content: space-around; } }
+    @media (max-width: 990px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos {
+        flex-wrap: wrap;
+        margin-left: 50px;
+        padding-right: 50px;
+        margin-top: 50px; } }
+    @media (max-width: 575px) {
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos {
+        justify-content: space-around; } }
+    body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item {
+      margin-top: 60px;
+      max-width: 180px;
+      position: relative;
+      font-size: 0;
+      margin-right: 50px;
+      margin-bottom: 60px; }
+      @media (max-width: 575px) {
+        body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item:first-child {
+          margin-right: 30px; } }
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item:last-child {
+        margin-right: 0px; }
+        @media (max-width: 575px) {
+          body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item:last-child {
+            margin-right: 50px; } }
+      @media (max-width: 575px) {
+        body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item:nth-child(2) {
+          margin-right: 30px; } }
+      @media (max-width: 1200px) {
+        body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item {
+          margin-right: 40px; } }
+      @media (max-width: 575px) {
+        body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item {
+          max-width: 130px;
+          margin-right: 30px; } }
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__link {
+        font-family: 'GTWalsheimBold';
+        font-size: 12px;
+        text-decoration: underline;
+        float: left;
+        letter-spacing: 0px; }
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_eng {
+        width: 110px;
+        height: auto;
+        margin-left: auto;
+        position: absolute;
+        top: -75px;
+        right: -20px; }
+        @media (max-width: 575px) {
+          body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_eng {
+            width: 79px;
+            top: -52px;
+            right: -15px; } }
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cx {
+        width: 190px;
+        height: auto;
+        margin-left: auto;
+        position: absolute;
+        top: -80px;
+        right: -52px; }
+        @media (max-width: 575px) {
+          body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cx {
+            width: 137px;
+            top: -58px;
+            right: -38px; } }
+      body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cm {
+        width: 150px;
+        height: auto;
+        margin-left: auto;
+        position: absolute;
+        top: -115px;
+        right: -30px; }
+        @media (max-width: 575px) {
+          body.about_us .homepage__our-divisions .homepage__our-divisions__logos .homepage__our-divisions__item__logo_cm {
+            width: 108px;
+            top: -85px;
+            right: -20px; } }
+
+body.about_us .splide {
+  margin-top: 70px;
+  width: 100%;
+  height: 520px;
+  color: white;
+  font-family: 'GTWalsheimMedium'; }
+  body.about_us .splide__text-container {
+    max-width: 270px;
+    min-width: 210px;
+    position: relative;
+    margin-right: 180px;
+    margin-left: auto;
+    padding-left: 30px;
+    top: 100px; }
+    body.about_us .splide__text-container__year {
+      font-size: 18px;
+      line-height: 21px; }
+      @media (max-width: 990px) {
+        body.about_us .splide__text-container__year {
+          font-size: 17px;
+          line-height: 20px; } }
+      @media (max-width: 768px) {
+        body.about_us .splide__text-container__year {
+          font-size: 15px;
+          line-height: 17px; } }
+      @media (max-width: 575px) {
+        body.about_us .splide__text-container__year {
+          font-size: 13px;
+          line-height: 14px; } }
+    body.about_us .splide__text-container__header {
+      font-family: 'GTWalsheimBold';
+      font-size: 72px;
+      line-height: 62px;
+      margin-top: 10px; }
+      @media (max-width: 990px) {
+        body.about_us .splide__text-container__header {
+          font-size: 68px;
+          line-height: 58px; } }
+      @media (max-width: 768px) {
+        body.about_us .splide__text-container__header {
+          font-size: 58px;
+          line-height: 48px; } }
+      @media (max-width: 575px) {
+        body.about_us .splide__text-container__header {
+          font-size: 48px;
+          line-height: 38px; } }
+    body.about_us .splide__text-container__text {
+      font-family: 'GTWalsheimBold';
+      font-size: 18px;
+      line-height: 21px;
+      margin-top: 18px; }
+      @media (max-width: 990px) {
+        body.about_us .splide__text-container__text {
+          font-size: 17px;
+          line-height: 20px; } }
+      @media (max-width: 768px) {
+        body.about_us .splide__text-container__text {
+          font-size: 15px;
+          line-height: 17px; } }
+      @media (max-width: 768px) {
+        body.about_us .splide__text-container__text {
+          font-size: 13px;
+          line-height: 14px; } }
+    body.about_us .splide__text-container__link {
+      font-family: 'GTWalsheimBold';
+      display: inline-block;
+      font-size: 12px;
+      line-height: 14px;
+      margin-top: 15px;
+      color: #FFF; }
+      @media (max-width: 768px) {
+        body.about_us .splide__text-container__link {
+          font-size: 10px;
+          line-height: 12px; } }
+      @media (max-width: 575px) {
+        body.about_us .splide__text-container__link {
+          font-size: 8px;
+          line-height: 10px; } }
+  body.about_us .splide .splide_1__pagination {
+    height: 100px;
+    margin-right: 155px;
+    margin-left: auto;
+    max-width: 270px;
+    min-width: 80px;
+    padding-left: 30px;
+    padding-right: 0;
+    justify-content: flex-start; }
+    body.about_us .splide .splide_1__pagination button {
+      background-color: transparent;
+      border: 2px solid white;
+      width: 10px;
+      height: 10px;
+      box-sizing: border-box;
+      margin: 7px; }
+    body.about_us .splide .splide_1__pagination button.is-active {
+      box-sizing: border-box;
+      border: none;
+      background-color: white;
+      width: 8px;
+      height: 8px; }
+  body.about_us .splide__video {
+    margin-left: auto;
+    margin-right: auto;
+    height: 520px; }
+
+body.about_us .homepage__connect {
+  padding-bottom: 60px;
+  width: 100%;
+  min-height: 366px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: #3F7793;
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-right: 40px; }
+  @media (max-width: 768px) {
+    body.about_us .homepage__connect {
+      padding-left: 15px;
+      padding-right: 15px; } }
+  body.about_us .homepage__connect .homepage__connect__item {
+    position: relative;
+    margin-top: 60px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #FFF;
+    margin-right: 30px; }
+    body.about_us .homepage__connect .homepage__connect__item:last-child {
+      margin-right: 0; }
+    @media (max-width: 768px) {
+      body.about_us .homepage__connect .homepage__connect__item:nth-child(3) {
+        margin-right: 30px; } }
+    @media (max-width: 768px) {
+      body.about_us .homepage__connect .homepage__connect__item:nth-child(2) {
+        order: 3;
+        margin-right: 0px; } }
+    body.about_us .homepage__connect .homepage__connect__item__logo_join {
+      width: 100px;
+      height: auto;
+      position: absolute; }
+    body.about_us .homepage__connect .homepage__connect__item__logo_stay {
+      width: 160px;
+      height: auto;
+      position: absolute;
+      top: -45px; }
+    body.about_us .homepage__connect .homepage__connect__item__logo_get {
+      width: 100px;
+      height: auto;
+      position: absolute;
+      top: -10px; }
+    body.about_us .homepage__connect .homepage__connect__item__header {
+      font-family: 'GTWalsheimRegular';
+      font-size: 22pt;
+      line-height: 30pt;
+      letter-spacing: -6%; }
+    body.about_us .homepage__connect .homepage__connect__item__header_join {
+      margin-top: 95px; }
+    body.about_us .homepage__connect .homepage__connect__item__header_stay {
+      margin-top: 75px; }
+    body.about_us .homepage__connect .homepage__connect__item__header_get {
+      margin-top: 75px; }
+    body.about_us .homepage__connect .homepage__connect__item__text {
+      font-family: 'GTWalsheimLight';
+      font-size: 12pt;
+      line-height: 15pt;
+      margin-top: 20px;
+      text-align: center; }
+    body.about_us .homepage__connect .homepage__connect__item__form {
+      width: 100%; }
+      body.about_us .homepage__connect .homepage__connect__item__form__input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #FFF;
+        margin-top: 15px;
+        background: none;
+        color: white;
+        outline: none; }
+        body.about_us .homepage__connect .homepage__connect__item__form__input::placeholder {
+          color: #FFF; }
+      body.about_us .homepage__connect .homepage__connect__item__form__button {
+        background-color: #000;
+        width: 100%;
+        height: 25px;
+        border-radius: 12px;
+        color: #FFF;
+        font-family: 'GTWalsheimMedium';
+        font-size: 10pt;
+        margin-top: 20px;
+        border: 2px solid #000;
+        cursor: pointer; }
+      body.about_us .homepage__connect .homepage__connect__item__form__button:hover {
+        background-color: white;
+        border-color: #FFF;
+        color: #3F7793; }
+    body.about_us .homepage__connect .homepage__connect__item__link {
+      font-family: 'GTWalsheimBold';
+      color: #FFF;
+      font-size: 12pt;
+      line-height: 14pt;
+      margin-top: 20px;
+      text-decoration: underline; }
 
 .margin-left {
   margin-left: 80px; }
@@ -492,7 +967,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     position: relative;
     margin-left: auto;
     width: 60%; }
-    .homepage__hero .homepage__hero__right-block .homepage__hero__carousel {
+    .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
       margin: 0;
       margin-top: 0;
       padding: 0;
@@ -502,15 +977,15 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
       width: 100% !important;
       height: 600px !important; }
       @media (max-width: 1200px) {
-        .homepage__hero .homepage__hero__right-block .homepage__hero__carousel {
+        .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
           height: 550px !important; } }
       @media (max-width: 768px) {
-        .homepage__hero .homepage__hero__right-block .homepage__hero__carousel {
+        .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
           height: 550px !important; } }
       @media (max-width: 575px) {
-        .homepage__hero .homepage__hero__right-block .homepage__hero__carousel {
+        .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1 {
           height: 450px !important; } }
-    .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_grabbed {
+    .homepage__hero .homepage__hero__right-block .homepage__hero__carousel_1_grabbed {
       cursor: grabbing; }
 
 .homepage__our-divisions {
@@ -644,7 +1119,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     max-width: 270px;
     min-width: 210px;
     position: relative;
-    margin-right: 380px;
+    margin-right: 180px;
     margin-left: auto;
     padding-left: 30px;
     top: 100px; }
@@ -714,10 +1189,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
           line-height: 10px; } }
   .splide .splide_1__pagination {
     height: 100px;
+    margin-right: 155px;
     margin-left: auto;
     max-width: 270px;
     min-width: 80px;
-    margin-right: 180px;
     padding-left: 30px;
     padding-right: 0;
     justify-content: flex-start; }
@@ -818,7 +1293,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         .homepage__connect .homepage__connect__item__form__input::placeholder {
           color: #FFF; }
       .homepage__connect .homepage__connect__item__form__button {
-        background-color: #3F7793;
+        background-color: #000;
         width: 100%;
         height: 25px;
         border-radius: 12px;
@@ -826,11 +1301,11 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-family: 'GTWalsheimMedium';
         font-size: 10pt;
         margin-top: 20px;
-        border: 2px solid white;
+        border: 2px solid #000;
         cursor: pointer; }
       .homepage__connect .homepage__connect__item__form__button:hover {
         background-color: white;
-        background-color: white;
+        border-color: #FFF;
         color: #3F7793; }
     .homepage__connect .homepage__connect__item__link {
       font-family: 'GTWalsheimBold';
