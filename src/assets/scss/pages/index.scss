@@ -274,7 +274,7 @@
             //border: 1px solid red;
             position: relative;
             font-size: 0; //! Removing space between links
-            margin-right: 100px;
+            margin-right: 50px;
             margin-bottom: 60px;
     
             &:first-child {
@@ -305,10 +305,14 @@
                 margin-right: 30px;
             }
     
-    
+            & > .link-color_green {
+                
+            }
+
+
             &__link {
                 font-family: 'GTWalsheimBold';
-                color: #000;
+                //color: #000;
                 font-size: 12px;
                 text-decoration: underline;
                 float: left;
