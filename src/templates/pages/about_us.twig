@@ -50,74 +50,32 @@
             </div>
         </div>
 
-        <div class="homepage__our-divisions" id="homepage__our-divisions">
-            <h2 class="homepage__our-divisions_header margin-left">Our<br> Divisions. </h2>
-            <div class="homepage__our-divisions__logos">
-                
-                <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_eng" alt="Logo-Eng" class="homepage__our-divisions__item__logo">
-                    <a class="homepage__our-divisions__item__link color_green-logo" href="#">Learn More &#8594</a>
-                    <a class="homepage__our-divisions__item__link color_green-logo" href="#">/ View Projects &#8594</a>
-                    <div class="homepage__our-divisions__item__logo_eng">1</div>
-                </div>
-                <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_cx" alt="Logo-Cx" class="homepage__our-divisions__item__logo">
-                    <a class="homepage__our-divisions__item__link color_blue-logo" href="#">Learn More &#8594</a>
-                    <a class="homepage__our-divisions__item__link color_blue-logo" href="#">/ View Projects &#8594</a>
-                    <div class="homepage__our-divisions__item__logo_cx">2</div>
-                </div>
-                <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_cm" alt="Logo-Cm" class="homepage__our-divisions__item__logo">
-                    <a class="homepage__our-divisions__item__link color_orange-logo" href="#">Learn More &#8594</a>
-                    <a class="homepage__our-divisions__item__link color_orange-logo" href="#">/ View Projects &#8594</a>
-                    <div class="homepage__our-divisions__item__logo_cm">3</div>
+
+        <div class="splide_about-us_1" id="splide_about-us_1">
+            <div class="splide__track">
+                <div class="splide__list">
+                    <div class="splide__slide">
+                        <img src="./assets/img/1.jpg" alt="Slide-1" data-descr="Slide number 1">
+                    </div>
+                    <div class="splide__slide">
+                        <img src="./assets/img/2.jpg" alt="Slide-2" data-descr="Slide number 1">
+                    </div>
+                        <div class="splide__slide">
+                            <video class="splide__video" width="100%" height="240" controls muted autoplay>
+                                <source src="./assets/vid/videoplayback.mp4" type="video/mp4"  data-descr="Slide number 3">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    <div class="splide__slide">
+                        <img src="./assets/img/3.jpg" alt="Pic4" data-descr="Slide number 4">
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="splide-1" id="splide_about-us_1">
-            <div class="splide__track">
-                  <div class="splide__list">
-                      <div class="splide__slide">
-                          <img src="./assets/img/1.jpg" alt="Pic1">
-                          <div class="splide__text-container">
-                              <p class="splide__text-container__year">2022</p>
-                              <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                              <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                              <a class="splide__text-container__link" href="#">Read More →</a>
-                          </div>
-                      </div>
-                      <div class="splide__slide">
-                        <img src="./assets/img/2.jpg" alt="Pic2">
-                        <div class="splide__text-container">
-                            <p class="splide__text-container__year">2023</p>
-                            <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                            <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                            <a class="splide__text-container__link" href="#">Read More →</a>
-                        </div>
-                    </div>
-                    <div class="splide__slide">
-                        <video class="splide__video" width="100%" height="240" controls muted autoplay>
-                            <source src="./assets/vid/videoplayback.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="splide__text-container">
-                            <p class="splide__text-container__year">2024</p>
-                            <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                            <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                            <a class="splide__text-container__link" href="#">Read More →</a>
-                        </div>
-                    </div>
-                    <div class="splide__slide">
-                        <img src="./assets/img/3.jpg" alt="Pic4">
-                        <div class="splide__text-container">
-                            <p class="splide__text-container__year">2025</p>
-                            <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                            <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                            <a class="splide__text-container__link" href="#">Read More →</a>
-                        </div>
-                    </div>
-                  </div>
+            <div class="splide__arrows">
+                <button class="splide__arrow--prev">
+                </button>
+                <button class="splide__arrow--next">
+                </button>
             </div>
           </div>
         
@@ -154,35 +112,8 @@
 {% endblock content %} 
 
 {% block scripts %}
-    <script type='module' src='./assets/js/about_us.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function() {
-            var splide = new Splide('.splide-1', {
-                type: "loop",
-                perPag: 1,
-                clones:1, 
-                arrows: false,
-                drag: true,
-                dragMinThreshold: {
-                    mouse: 0,
-                    touch: 10,
-                },
-                autoplay: true,
-                interval: 4000,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                cover: true,
-                height: "520px",
-                classes: {
-                    pagination: 'splide__pagination splide_1__pagination',
-                    //page      : 'splide__pagination__page your-class-page',
-                },
-            });
-            splide.mount();
-        });
-    </script>
+    <script type='module' src='./assets/js/about_us.js'></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js" integrity="sha512-ilxj730331yM7NbrJAICVJcRmPFErDqQhXJcn+PLbkXdE031JJbcK87Wt4VbAK+YY6/67L+N8p7KdzGoaRjsTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 {% endblock scripts %} 

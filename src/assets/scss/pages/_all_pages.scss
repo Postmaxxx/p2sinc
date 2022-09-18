@@ -367,166 +367,6 @@
 
 
 
-
-
-
-.splide {
-    margin-top: 70px;
-    width: 100%;
-    height: 520px;
-    //border: 3px solid red;
-    color: white;
-    font-family: 'GTWalsheimMedium';
-
-
-    &__text-container {
-
-        max-width: 270px;
-        min-width: 210px;
-
-        //border: 2px solid blue;
-        position: relative;
-        //margin-left: 62%;
-        //margin-right: 50px;
-
-        margin-right: 180px;
-        margin-left: auto;
-        padding-left: 30px;
-        top: 100px;
-
-        &__year {
-            font-size: 18px;
-            line-height: 21px;
-
-            @include respond-to(md) {
-                font-size: 17px;
-                line-height: 20px;
-            }
-
-            @include respond-to(sm) {
-                font-size: 15px;
-                line-height: 17px;
-            }
-
-            @include respond-to(xs) {
-                font-size: 13px;
-                line-height: 14px;
-            }
-        }
-    
-        &__header {
-            font-family: 'GTWalsheimBold';
-            font-size: 72px;
-            line-height: 62px;
-            margin-top: 10px;
-
-            @include respond-to(md) {
-                font-size: 68px;
-                line-height: 58px;
-            }
-
-            @include respond-to(sm) {
-                font-size: 58px;
-                line-height: 48px;
-            }
-
-            @include respond-to(xs) {
-                font-size: 48px;
-                line-height: 38px;
-            }
-        }
-    
-        &__text {
-            font-family: 'GTWalsheimBold';
-            font-size: 18px;
-            line-height: 21px;
-            margin-top: 18px;
-
-            @include respond-to(md) {
-                font-size: 17px;
-                line-height: 20px;
-            }
-
-            @include respond-to(sm) {
-                font-size: 15px;
-                line-height: 17px;
-            }
-
-            @include respond-to(sm) {
-                font-size: 13px;
-                line-height: 14px;
-            }
-        }
-
-        &__link {
-            font-family: 'GTWalsheimBold';
-            display: inline-block;
-            font-size: 12px;
-            line-height: 14px;
-            margin-top: 15px;
-            color: #FFF;
-
-
-            @include respond-to(sm) {
-                font-size: 10px;
-                line-height: 12px;
-            }
-
-            @include respond-to(xs) {
-                font-size: 8px;
-                line-height: 10px;
-            }
-            
-        }
-    }
-
-
-
-    & .splide_1__pagination {
-        height: 100px;
-        //margin-left: auto;
-        margin-right: 155px;
-        margin-left: auto;
-        max-width: 270px;
-        min-width: 80px;
-        //margin-right: 180px;
-        padding-left: 30px;
-        padding-right: 0;
-        justify-content: flex-start;
-
-        & button {
-            background-color: transparent;
-            border: 2px solid white;
-            width: 10px;
-            height: 10px;
-            box-sizing: border-box;
-            margin: 7px;
-
-        }
-
-        & button.is-active {
-            box-sizing: border-box;
-            border: none;
-            background-color: white;
-            width: 8px;
-            height: 8px;
-
-        }
-    }
-
-    &__video {
-        margin-left: auto;
-        margin-right: auto;
-        height: 520px;
-    }
-
-}
-
-
-
-
-
-
 .homepage__connect {
     padding-bottom: 60px;
     width: 100%;
@@ -678,4 +518,67 @@
     }
 
 
+}
+
+
+
+
+
+
+
+
+
+
+// for splide with text paganation and arrows
+.splide__arrows {
+    position: relative;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > button {
+        min-width: 30px;
+        opacity: 1;
+        left: auto;
+        right: auto;
+        height: 30px;
+    }
+
+    .splide__pagination_text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none; 
+        flex-wrap: wrap;
+        margin: 0;
+        padding-left: 0; 
+    
+        & li {
+            display: inline-block;
+            margin-right: 20px;
+            margin-left: 20px;
+    
+            & button {
+                color: $blue-1;
+                background-color: transparent;
+                width: auto;
+                font-size: 30px;
+                border-radius: 0;
+                width: 100%;
+                //min-height: 50px;
+                opacity: 1;
+                cursor: pointer;
+                border: none;
+            }
+    
+            & button.is-active {
+                text-decoration: underline;
+                background-color: transparent;
+                font-size: 30px;
+            }
+        }
+    }
 }
