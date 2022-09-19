@@ -31,6 +31,19 @@
     ]
     %}
 
+    {% set content = {
+        hero: {
+            header: 'We Are<br> P2S Inc.',
+            subheader: 'Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.',
+            text: '',
+            link: 'learn more about us  &#8594',
+            linkto: '#'
+        }
+    
+    }
+        
+    %}
+
 
 {% block content %}
     {% include '../components/_nav_side.twig' with nav_side_navs %}
@@ -38,13 +51,13 @@
 
     <div class='content-container'>
         
-        {% include '../components/_hero_carousel.twig' with { id : "index" } %}
+        {% include '../components/_hero_carousel.twig' with { id : pageName, content } %}
         
-        {% include '../components/_our-divisions.twig' with { id : "index" } %}
+        {% include '../components/_our-divisions.twig' with { id : pageName } %}
 
-        {% include '../components/_splider.twig' with { id : "index" } %}
+        {% include '../components/_splider.twig' with { id : pageName } %}
 
-        {% include '../components/_connect.twig' with { id : "index" } %}
+        {% include '../components/_connect.twig' with { id : pageName } %}
 
     </div>
     

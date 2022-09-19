@@ -32,23 +32,25 @@
     %}
 
 
+
+    {% set content = {
+        hero: {
+            header: 'About Us',
+            subheader: '',
+            text: '',
+            linkto: '#'
+        }
+    
+    }
+        
+    %}
+
+
+
 {% block content %}
     {% include '../components/_nav_side.twig' with nav_side_navs %}
-    <div class="fade-block"></div>
-    <div class='content-container'>
-        <div class="homepage__hero" id="homepage__hero">
-            <div class="homepage__hero__left-block margin-left">
-                <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo" class="homepage__hero__logo">
-                <div class="homepage__hero__text-container">
-                    <h1 class="homepage__hero__title">We Are<br> P2S Inc.</h1>
-                    <p class="homepage__hero__text">Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.</p>
-                    <a href='#' class="homepage__hero__link">learn more about us  &#8594</a>
-                </div>
-            </div>
-            <div class="homepage__hero__right-block">
-                <div class="homepage__hero__carousel_1"></div>
-            </div>
-        </div>
+
+    {% include '../components/_hero_image.twig' with { id : pageName, content } %}
 
 
         <div class="splide_about-us_1 splide_type-2" id="splide_about-us_1">

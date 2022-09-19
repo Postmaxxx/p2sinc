@@ -428,27 +428,28 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
           .hero_carousel > div:nth-of-type(1) > div > h1 {
             font-size: 30px;
             line-height: 30px; } }
-      .hero_carousel > div:nth-of-type(1) > div > p {
+      .hero_carousel > div:nth-of-type(1) > div > span {
         font-family: 'GTWalsheimBold';
         margin-top: 40px;
         font-size: 28px;
-        line-height: 30px; }
+        line-height: 30px;
+        display: block; }
         @media (max-width: 1200px) {
-          .hero_carousel > div:nth-of-type(1) > div > p {
+          .hero_carousel > div:nth-of-type(1) > div > span {
             font-size: 22px;
             line-height: 20px; } }
         @media (max-width: 990px) {
-          .hero_carousel > div:nth-of-type(1) > div > p {
+          .hero_carousel > div:nth-of-type(1) > div > span {
             margin-top: 30px;
             font-size: 20px;
             line-height: 20px; } }
         @media (max-width: 768px) {
-          .hero_carousel > div:nth-of-type(1) > div > p {
+          .hero_carousel > div:nth-of-type(1) > div > span {
             margin-top: 25px;
             font-size: 18px;
             line-height: 18px; } }
         @media (max-width: 575px) {
-          .hero_carousel > div:nth-of-type(1) > div > p {
+          .hero_carousel > div:nth-of-type(1) > div > span {
             margin-top: 25px;
             font-size: 15px;
             line-height: 15px; } }
@@ -497,6 +498,126 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         .hero_carousel > div:nth-of-type(2) > .carousel_max {
           height: 450px !important; } }
     .hero_carousel > div:nth-of-type(2) .carousel_max_grabbed {
+      cursor: grabbing; }
+
+.hero_image {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .hero_image > div:nth-of-type(1) {
+    width: 42%; }
+    .hero_image > div:nth-of-type(1) > img {
+      margin-top: 40px;
+      width: 120px; }
+      @media (max-width: 990px) {
+        .hero_image > div:nth-of-type(1) > img {
+          margin-top: 40px;
+          width: 100px; } }
+    .hero_image > div:nth-of-type(1) > div {
+      margin-top: 70px;
+      padding-right: 90px;
+      font-family: 'GTWalsheimRegular';
+      color: #3F7793; }
+      @media (max-width: 1200px) {
+        .hero_image > div:nth-of-type(1) > div {
+          padding-right: 40px; } }
+      @media (max-width: 768px) {
+        .hero_image > div:nth-of-type(1) > div {
+          padding-right: 35px; } }
+      @media (max-width: 575px) {
+        .hero_image > div:nth-of-type(1) > div {
+          padding-right: 25px; } }
+      .hero_image > div:nth-of-type(1) > div > h1 {
+        font-family: 'GTWalsheimBold';
+        font-size: 72px;
+        line-height: 62px; }
+        @media (max-width: 1200px) {
+          .hero_image > div:nth-of-type(1) > div > h1 {
+            font-size: 64px;
+            line-height: 58px; } }
+        @media (max-width: 990px) {
+          .hero_image > div:nth-of-type(1) > div > h1 {
+            font-size: 46px;
+            line-height: 36px; } }
+        @media (max-width: 768px) {
+          .hero_image > div:nth-of-type(1) > div > h1 {
+            font-size: 40px;
+            line-height: 40px; } }
+        @media (max-width: 575px) {
+          .hero_image > div:nth-of-type(1) > div > h1 {
+            font-size: 30px;
+            line-height: 30px; } }
+      .hero_image > div:nth-of-type(1) > div > span {
+        font-family: 'GTWalsheimBold';
+        margin-top: 40px;
+        font-size: 28px;
+        line-height: 30px;
+        display: block; }
+        @media (max-width: 1200px) {
+          .hero_image > div:nth-of-type(1) > div > span {
+            font-size: 22px;
+            line-height: 20px; } }
+        @media (max-width: 990px) {
+          .hero_image > div:nth-of-type(1) > div > span {
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 20px; } }
+        @media (max-width: 768px) {
+          .hero_image > div:nth-of-type(1) > div > span {
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 18px; } }
+        @media (max-width: 575px) {
+          .hero_image > div:nth-of-type(1) > div > span {
+            margin-top: 25px;
+            font-size: 15px;
+            line-height: 15px; } }
+      .hero_image > div:nth-of-type(1) > div > a {
+        margin-top: 80px;
+        display: inline-block;
+        font-size: 18px;
+        text-decoration: underline;
+        font-family: 'GTWalsheimMedium';
+        color: #3F7793; }
+        @media (max-width: 1400px) {
+          .hero_image > div:nth-of-type(1) > div > a {
+            margin-top: 70px; } }
+        @media (max-width: 990px) {
+          .hero_image > div:nth-of-type(1) > div > a {
+            margin-top: 50px;
+            font-size: 13px; } }
+        @media (max-width: 768px) {
+          .hero_image > div:nth-of-type(1) > div > a {
+            margin-top: 30px;
+            font-size: 12px; } }
+        @media (max-width: 575px) {
+          .hero_image > div:nth-of-type(1) > div > a {
+            margin-top: 30px;
+            font-size: 9px; } }
+  .hero_image > div:nth-of-type(2) {
+    position: relative;
+    margin-left: auto;
+    width: 60%; }
+    .hero_image > div:nth-of-type(2) > .carousel_max {
+      margin: 0;
+      margin-top: 0;
+      padding: 0;
+      margin-left: 0;
+      cursor: grab;
+      display: flex;
+      width: 100% !important;
+      height: 600px !important; }
+      @media (max-width: 1200px) {
+        .hero_image > div:nth-of-type(2) > .carousel_max {
+          height: 550px !important; } }
+      @media (max-width: 768px) {
+        .hero_image > div:nth-of-type(2) > .carousel_max {
+          height: 550px !important; } }
+      @media (max-width: 575px) {
+        .hero_image > div:nth-of-type(2) > .carousel_max {
+          height: 450px !important; } }
+    .hero_image > div:nth-of-type(2) .carousel_max_grabbed {
       cursor: grabbing; }
 
 .connect {
@@ -837,19 +958,19 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     .footer-container .footer__columns .wide-colimn {
       margin-right: 60px; }
 
-.margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1) {
+.margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
   margin-left: 80px; }
   @media (max-width: 1200px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
       margin-left: 70px; } }
   @media (max-width: 990px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
       margin-left: 60px; } }
   @media (max-width: 768px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
       margin-left: 50px; } }
   @media (max-width: 575px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
       margin-left: 40px; } }
 
 .splide_type-2 .splide__arrows {
