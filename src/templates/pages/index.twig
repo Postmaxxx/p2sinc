@@ -37,154 +37,22 @@
     <div class="fade-block"></div>
 
     <div class='content-container'>
-        <div class="hero_carousel" id="index__hero">
-            <div>
-                <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo">
-                <div>
-                    <h1>We Are<br> P2S Inc.</h1>
-                    <p>Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.</p>
-                    <a href='#'>learn more about us  &#8594</a>
-                </div>
-            </div>
-            <div>
-                <div class="carousel_max" data-carousel="index_1"></div>
-                <div class="carousel_max" data-carousel="index_2"></div>
-            </div>
-
-        </div>
-
-        <div class="homepage__our-divisions" id="homepage__our-divisions">
-            <h2 class="homepage__our-divisions_header margin-left">Our<br> Divisions. </h2>
-            <div class="homepage__our-divisions__logos">
-                
-                <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_eng" alt="Logo-Eng" class="homepage__our-divisions__item__logo">
-                    <a class="homepage__our-divisions__item__link color_green-logo" href="#">Learn More &#8594</a>
-                    <a class="homepage__our-divisions__item__link color_green-logo" href="#">/ View Projects &#8594</a>
-                    <div class="homepage__our-divisions__item__logo_eng">1</div>
-                </div>
-                <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_cx" alt="Logo-Cx" class="homepage__our-divisions__item__logo">
-                    <a class="homepage__our-divisions__item__link color_blue-logo" href="#">Learn More &#8594</a>
-                    <a class="homepage__our-divisions__item__link color_blue-logo" href="#">/ View Projects &#8594</a>
-                    <div class="homepage__our-divisions__item__logo_cx">2</div>
-                </div>
-                <div class="homepage__our-divisions__item">
-                    <img src="./assets/img/sprites/sprite.svg#p2s__logo_cm" alt="Logo-Cm" class="homepage__our-divisions__item__logo">
-                    <a class="homepage__our-divisions__item__link color_orange-logo" href="#">Learn More &#8594</a>
-                    <a class="homepage__our-divisions__item__link color_orange-logo" href="#">/ View Projects &#8594</a>
-                    <div class="homepage__our-divisions__item__logo_cm">3</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="splide_index_1" id="splide_index_1">
-            <div class="splide__track">
-                  <div class="splide__list">
-                      <div class="splide__slide">
-                          <img src="./assets/img/1.jpg" alt="Pic1">
-                          <div class="splide__text-container">
-                              <p class="splide__text-container__year">2022</p>
-                              <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                              <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                              <a class="splide__text-container__link" href="#">Read More →</a>
-                          </div>
-                      </div>
-                      <div class="splide__slide">
-                        <img src="./assets/img/2.jpg" alt="Pic2">
-                        <div class="splide__text-container">
-                            <p class="splide__text-container__year">2023</p>
-                            <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                            <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                            <a class="splide__text-container__link" href="#">Read More →</a>
-                        </div>
-                    </div>
-                    <div class="splide__slide">
-                        <video class="splide__video" width="100%" height="240" controls muted autoplay>
-                            <source src="./assets/vid/videoplayback.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="splide__text-container">
-                            <p class="splide__text-container__year">2024</p>
-                            <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                            <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                            <a class="splide__text-container__link" href="#">Read More →</a>
-                        </div>
-                    </div>
-                    <div class="splide__slide">
-                        <img src="./assets/img/3.jpg" alt="Pic4">
-                        <div class="splide__text-container">
-                            <p class="splide__text-container__year">2025</p>
-                            <h4 class="splide__text-container__header">What’s<br>New?</h4>
-                            <p class="splide__text-container__text">P2S Announces Two <br>Promotions in Seattle Office</p>
-                            <a class="splide__text-container__link" href="#">Read More →</a>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-          </div>
         
+        {% include '../components/_hero_carousel.twig' with { id : "index" } %}
+        
+        {% include '../components/_our-divisions.twig' with { id : "index" } %}
 
-        <div class="homepage__connect" id="homepage__connect">
-            <div class="homepage__connect__item">
-                <lottie-player class="homepage__connect__item__logo_join" autoplay loop mode="normal" src="./assets/json/JoinUs_Widget.json" ></lottie-player>
-                <h3 class="homepage__connect__item__header homepage__connect__item__header_join">Join Us!</h3>
-                <p class="homepage__connect__item__text">We're hiring for a broad range 
-                    of positions. Take a look at our Openings page to learn more and apply!</p>
-                <a class="homepage__connect__item__link" href='#'>Openings &#8594</a>
-            </div>
-            <div class="homepage__connect__item">
-                <lottie-player class="homepage__connect__item__logo_stay" autoplay loop mode="normal" src="./assets/json/StayintheMix_Widget.json" ></lottie-player>
-                <h3 class="homepage__connect__item__header homepage__connect__item__header_stay">Stay In <br> the Mix!</h3>
-                <p class="homepage__connect__item__text">Sign up for the P2S Magazine</p>
-                <form action="" class="homepage__connect__item__form" id="homepage__connect__form">
-                    <input class="homepage__connect__item__form__input" type="text" required placeholder="Name *"></input>
-                    <input class="homepage__connect__item__form__input" type="email" required placeholder="Email *"></input>
-                    <button class="homepage__connect__item__form__button" type="submit" form="homepage__connect__form">Submit &#8594</button>
-                </form>
-            </div>
-            <div class="homepage__connect__item">
-                <lottie-player class="homepage__connect__item__logo_get" autoplay loop mode="normal" src="./assets/json/GetinTouch_Widget.json" ></lottie-player>
-                <h3 class="homepage__connect__item__header homepage__connect__item__header_get">Get In <br> Touch!</h3>
-                <p class="homepage__connect__item__text">We want to hear from you! Fill
-                    out the form and we'll get back to you as soon as we can.</p>
-                <a class="homepage__connect__item__link" href='#'>Form &#8594</a>
-            </div>
+        {% include '../components/_splider.twig' with { id : "index" } %}
 
-        </div>
+        {% include '../components/_connect.twig' with { id : "index" } %}
+
     </div>
     
 {% endblock content %} 
 
 {% block scripts %}
-    <script type='module' src='./assets/js/index.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function() {
-            var splide = new Splide('.splide_index_1', {
-                type: "loop",
-                perPag: 1,
-                clones:1, 
-                arrows: false,
-                drag: true,
-                dragMinThreshold: {
-                    mouse: 0,
-                    touch: 10,
-                },
-                autoplay: true,
-                interval: 4000,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                cover: true,
-                height: "520px",
-                classes: {
-                    pagination: 'splide__pagination',
-                    //page      : 'splide__pagination__page your-class-page',
-                },
-            });
-            splide.mount();
-        });
-    </script>
+    <script type='module' src='./assets/js/index.js'></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js" integrity="sha512-ilxj730331yM7NbrJAICVJcRmPFErDqQhXJcn+PLbkXdE031JJbcK87Wt4VbAK+YY6/67L+N8p7KdzGoaRjsTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

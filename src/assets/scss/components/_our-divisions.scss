@@ -1,0 +1,171 @@
+.our-divisions {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 80px;
+
+    @include respond-to(md) {
+        flex-direction: column;
+     }
+
+
+    & > h2 {
+         font-family: 'GTWalsheimBold';
+         color: #3F7793;
+         font-size: 72px;
+         line-height: 68px;
+         width: calc(40% - 80px);
+         @extend .margin-left;
+         
+         @include respond-to(lg) {
+             font-size: 64px;
+             line-height: 58px;
+             width: calc(45% + 120px);
+         }
+ 
+         @include respond-to(md) {
+             font-size: 46px;
+             line-height: 36px;
+             width: auto;
+         }
+ 
+         @include respond-to(sm) {
+             font-size: 40px;
+             line-height: 40px;
+         }
+ 
+         @include respond-to(xs) {
+             font-size: 30px;
+             line-height: 30px;
+         }
+     }
+
+
+
+    & > div:nth-of-type(1) { // homepage__our-divisions__logos
+        max-width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding-right: 30px;
+    
+        
+    
+        @include respond-to(lg) {
+            width: 100%;
+            justify-content: space-around;
+        }
+    
+        @include respond-to(md) {
+             flex-wrap: wrap;
+            margin-left: 50px;
+            padding-right: 50px;
+            margin-top: 50px;
+        }
+    
+        @include respond-to(xs) {
+            justify-content: space-around;
+        }
+    
+       
+    
+    
+    
+        & > div { //.homepage__our-divisions__item
+            margin-top: 60px;
+            max-width: 180px;
+            //border: 1px solid red;
+            position: relative;
+            font-size: 0; //! Removing space between links
+            margin-right: 50px;
+            margin-bottom: 60px;
+    
+            &:first-child {
+                @include respond-to(xs) {
+                    margin-right: 30px;
+                }
+            }
+    
+            &:last-child {
+                margin-right: 0px;
+                @include respond-to(xs) {
+                    margin-right: 50px;
+                }
+            }
+    
+            &:nth-child(2) {
+                @include respond-to(xs) {
+                    margin-right: 30px;
+                }
+            }
+
+            @include respond-to(lg) {
+                margin-right: 40px;
+            }
+
+            @include respond-to(xs) {
+                max-width: 130px;
+                margin-right: 30px;
+            }
+    
+
+            & > a {
+                font-family: 'GTWalsheimBold';
+                //color: #000;
+                font-size: 12px;
+                text-decoration: underline;
+                float: left;
+                letter-spacing: 0px;
+            }
+    
+            & > .our-divisions__logo_eng {
+                width: 110px;
+                height: auto;
+                margin-left: auto;
+                position: absolute;
+                top: -75px;
+                right: -20px;
+
+                @include respond-to(xs) {
+                    width: 79px;
+                    top: -52px;
+                    right: -15px;
+                }
+
+            }
+    
+            & > .our-divisions__logo_cx {
+                width: 190px;
+                height: auto;
+                margin-left: auto;
+                position: absolute;
+                top: -80px;
+                right: -52px;
+                
+                @include respond-to(xs) {
+                    width: 137px;
+                    top: -58px;
+                    right: -38px;
+                }
+            }
+    
+            & > .our-divisions__logo_cm {
+                width: 150px;
+                height: auto;
+                margin-left: auto;
+                position: absolute;
+                top: -115px;
+                right: -30px;
+                
+                @include respond-to(xs) {
+                    width: 108px;
+                    top: -85px;
+                    right: -20px;
+                }
+            }
+        }
+    
+    }
+}

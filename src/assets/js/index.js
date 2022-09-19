@@ -26,7 +26,7 @@ let carousel__index_1 = {
     transitionTime: 1
 }
 
-
+/*
 let carousel__index_2 = {
   destinationData : 'index_2',
   //destinationClass : 'carousel_max',
@@ -48,10 +48,10 @@ let carousel__index_2 = {
   expandIconWidth: 70,
   expandIconHeignt: 70,
   transitionTime: 1
-}
+}*/
 
 let carousel = makeCarousel(carousel__index_1);
-let carousel2 = makeCarousel(carousel__index_2);
+//let carousel2 = makeCarousel(carousel__index_2);
 
 makeSideNav();
 
@@ -68,7 +68,7 @@ makeSideNav();
 
 
 
-  let iconMenu1 = document.querySelector('.homepage__our-divisions__item__logo_eng');
+  let iconMenu1 = document.querySelector('.our-divisions__logo_eng');
   let animationMenu1 = bodymovin.loadAnimation({
           container: iconMenu1,
           renderer: 'svg',
@@ -89,7 +89,7 @@ makeSideNav();
 
 
 
-  let iconMenu2 = document.querySelector('.homepage__our-divisions__item__logo_cx');
+  let iconMenu2 = document.querySelector('.our-divisions__logo_cx');
   let animationMenu2 = bodymovin.loadAnimation({
           container: iconMenu2,
           renderer: 'svg',
@@ -112,7 +112,7 @@ makeSideNav();
 
 
 
-  let iconMenu3 = document.querySelector('.homepage__our-divisions__item__logo_cm');
+  let iconMenu3 = document.querySelector('.our-divisions__logo_cm');
   let animationMenu3 = bodymovin.loadAnimation({
           container: iconMenu3,
           renderer: 'svg',
@@ -129,3 +129,36 @@ makeSideNav();
   iconMenu3.addEventListener('mouseleave', (e) => {
     animationMenu3.goToAndStop(34, 55)
   });
+
+
+
+
+  
+
+
+  document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide('.splider', {
+        type: "loop",
+        perPag: 1,
+        clones:1, 
+        arrows: false,
+        drag: true,
+        dragMinThreshold: {
+            mouse: 0,
+            touch: 10,
+        },
+        autoplay: true,
+        interval: 4000,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        cover: true,
+        height: "520px",
+        classes: {
+            pagination: 'splide__pagination',
+            //page      : 'splide__pagination__page your-class-page',
+        },
+    });
+    splide.mount();
+});
+
+

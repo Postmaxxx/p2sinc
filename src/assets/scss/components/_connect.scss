@@ -1,0 +1,146 @@
+.connect {
+    padding-bottom: 60px;
+    width: 100%;
+    min-height: 366px;
+    display: flex;
+    flex-direction: row;
+    align-items:  flex-start;
+    justify-content: space-around;
+    background-color: #3F7793;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    padding-right: 40px;
+
+
+
+    @include respond-to(sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    & > div {
+        position: relative;
+        margin-top: 60px;
+        width: 190px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: #FFF;
+        margin-right: 30px;
+
+
+        &:last-child{
+            margin-right: 0;
+        }
+    
+    
+        &:nth-child(3) {
+            @include respond-to(sm) {
+                margin-right: 30px;
+            }
+        }
+
+
+        &:nth-child(2) {
+            @include respond-to(sm) {
+                order: 3;
+                margin-right: 0px;
+            }
+        }
+
+        lottie-player {
+            height: auto;
+            position: absolute;
+        }
+
+        & > .logo_join {
+            width: 100px;
+        }
+
+        & > .logo_stay {
+            width: 160px;
+            top: -45px;
+        }
+
+        & > .logo_get {
+            width: 100px;
+            top: -10px;
+        }
+
+        & > h3 {
+            font-family: 'GTWalsheimRegular';
+            font-size: 22pt;
+            line-height: 30pt;
+            letter-spacing: -6%;
+            margin-top: 75px;
+        }
+
+        &:nth-child(1) > h3 {
+            margin-top: 95px;
+        }
+
+
+
+        & > p {
+            font-family: 'GTWalsheimLight';
+            font-size: 12pt;
+            line-height: 15pt;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        & > form {
+            width: 100%;
+
+            & > input {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #FFF; //!!!
+                margin-top: 15px;
+                background: none;
+                color: white;
+                outline: none;
+
+                &::placeholder {
+                    color: #FFF;
+                }
+            }
+
+            & > button {
+                background-color: $black;
+                width: 100%;
+                height: 25px;
+                border-radius: 12px;
+                color: #FFF;
+                font-family: 'GTWalsheimMedium';
+                font-size: 10pt;
+                margin-top: 20px;
+                border: 2px solid $black;
+                cursor: pointer;
+
+            }
+            &__button:hover {
+                background-color: white;
+                border-color: $white;
+
+                color: #3F7793;
+            }
+
+
+        }
+
+        & > a {
+            font-family: 'GTWalsheimBold';
+            color: #FFF;
+            font-size: 12pt;
+            line-height: 14pt;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+
+    }
+
+
+}
+
