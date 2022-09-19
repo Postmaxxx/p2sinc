@@ -1022,5 +1022,41 @@ body.about_us .splide_about-us_1 {
 .circle_orange {
   background-color: #FB9A2D; }
 
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px; }
+  .gallery > div {
+    width: 30%;
+    border: 1px solid blue; }
+    .gallery > div > figure {
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
+      border: 1px solid red;
+      aspect-ratio: 1 / 1; }
+      .gallery > div > figure img {
+        width: 100%; }
+    .gallery > div > div {
+      padding-left: 10%;
+      padding-right: 20%; }
+      .gallery > div > div > span {
+        display: table;
+        font-size: 18px;
+        margin-top: 10px; }
+        .gallery > div > div > span:first-child {
+          font-weight: 800; }
+        .gallery > div > div > span > div {
+          margin-left: 5px; }
+      .gallery > div > div > a {
+        text-transform: capitalize;
+        color: #000;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: block; }
+
 html {
   scroll-behavior: smooth; }

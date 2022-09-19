@@ -745,3 +745,63 @@
     @extend .circle;
     background-color: $orange_logo;
 }
+
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+
+    & > div { //card
+        width: 30%;
+        border: 1px solid blue;
+
+        & > figure {
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            border: 1px solid red;
+            aspect-ratio: 1 / 1;
+
+            img {
+                width: 100%;
+
+                //object-fit: contain;
+            }
+
+        }
+
+        & > div { //description
+
+            padding-left: 10%;
+            padding-right: 20%;
+
+            & > span {
+                display: table;
+                font-size: 18px;
+                margin-top: 10px;
+
+                &:first-child {
+                    font-weight: 800;
+                }
+
+                & > div {
+                    margin-left: 5px;
+                }
+
+            }
+            
+            & > a {
+                text-transform: capitalize;
+                color: $black;
+                margin-top: 20px;
+                margin-bottom: 30px;
+                display: block;
+            }
+
+        }
+    }
+}
