@@ -1,5 +1,5 @@
 {% extends "../_layout.twig" %}
-{% set pageTitle = 'P2S Inc | Home | P2S Inc' %}
+{% set pageTitle = 'P2S Inc | We Are P2SINC | P2S Inc' %}
 {% block styles %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
 {% endblock styles %}
@@ -35,20 +35,22 @@
 {% block content %}
     {% include '../components/_nav_side.twig' with nav_side_navs %}
     <div class="fade-block"></div>
-    
+
     <div class='content-container'>
-        <div class="homepage__hero" id="homepage__hero">
-            <div class="homepage__hero__left-block margin-left">
-                <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo" class="homepage__hero__logo">
-                <div class="homepage__hero__text-container">
-                    <h1 class="homepage__hero__title">We Are<br> P2S Inc.</h1>
-                    <p class="homepage__hero__text">Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.</p>
-                    <a href='#' class="homepage__hero__link">learn more about us  &#8594</a>
+        <div class="hero_carousel" id="index__hero">
+            <div>
+                <img src="./assets/img/sprites/sprite.svg#p2s__logo_1" alt="Our Logo">
+                <div>
+                    <h1>We Are<br> P2S Inc.</h1>
+                    <p>Our mission is to design a better future, every day. We inspire staff to design sustainable solutions for our clients.</p>
+                    <a href='#'>learn more about us  &#8594</a>
                 </div>
             </div>
-            <div class="homepage__hero__right-block">
-                <div class="homepage__hero__carousel_1"></div>
+            <div>
+                <div class="carousel_max" data-carousel="index_1"></div>
+                <div class="carousel_max" data-carousel="index_2"></div>
             </div>
+
         </div>
 
         <div class="homepage__our-divisions" id="homepage__our-divisions">

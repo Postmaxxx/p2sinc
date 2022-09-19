@@ -1,11 +1,13 @@
 export function makeCarousel(params) {
 
-const {destinationClass, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth, expandIconHeignt, nodeForFullsize, transitionTime, closePath } = params;
+const {destinationData, imagesPaths, imgWidth, imgGap, bgMoveSpeed, timeToBgMove, inertiaStep, inertiaSensivity, expandPath, expandIconWidth, expandIconHeignt, nodeForFullsize, transitionTime, closePath } = params;
 const fadeBlock = document.querySelector(".fade-block");
-const carousel = document.querySelector('.'+destinationClass)
+const carousel = document.querySelector(`[data-carousel='${destinationData}']`) ;
+const destinationClass = "carousel_max";
 
-let carouselHeight = document.querySelector('.'+destinationClass).clientHeight;
-let carouselWidth = document.querySelector('.'+destinationClass).clientWidth;
+
+let carouselHeight = carousel.clientHeight;
+let carouselWidth = carousel.clientWidth;
 
 const totalImages = imagesPaths.length; 
 
@@ -56,10 +58,10 @@ carousel.innerHTML = `
     `
 
 
-const ribbonImages = document.querySelector(`.${destinationClass}-images-container`); //The container for all 5 images
-const imgWrapperList = document.querySelectorAll(`.${destinationClass}-img-wrapper`); //The list of all 5 containers
-const imgContainerList = document.querySelectorAll(`.${destinationClass}-img-container`); //The list of all 5 containers
-const imgExpandIconList = document.querySelectorAll(`.${destinationClass}-expand-icon`); //The list of all 5 containers
+const ribbonImages = carousel.querySelector(`.${destinationClass}-images-container`); //The container for all 5 images
+const imgWrapperList = carousel.querySelectorAll(`.${destinationClass}-img-wrapper`); //The list of all 5 containers
+const imgContainerList = carousel.querySelectorAll(`.${destinationClass}-img-container`); //The list of all 5 containers
+const imgExpandIconList = carousel.querySelectorAll(`.${destinationClass}-expand-icon`); //The list of all 5 containers
 
 
 
@@ -74,12 +76,13 @@ sourceNode.insertAdjacentHTML('afterbegin', `
             <a class="${destinationClass}-link" href="#"></a>
         </div>
     </div>`)
+
 const imgFullScreenWrapper = document.querySelector(`.${destinationClass}-full-screen-wrapper`); //The container for fullscreen image
-const imgFullScreenImage = document.querySelector(`.${destinationClass}-full-screen-image`); //The container for fullscreen image
-const imgWrapper = document.querySelector(`.${destinationClass}-img-wrapper`); //The container for fullscreen image
-const imgFullScreenCloser = document.querySelector(`.${destinationClass}-full-screen-image-closer`); //The container for fullscreen image
-const imgDescr = document.querySelector(`.${destinationClass}-description`); 
-const imgDescrLink = document.querySelector(`.${destinationClass}-link`); 
+const imgFullScreenImage = imgFullScreenWrapper.querySelector(`.${destinationClass}-full-screen-image`); //The container for fullscreen image
+const imgWrapper = imgFullScreenWrapper.querySelector(`.${destinationClass}-img-wrapper`); //The container for fullscreen image
+const imgFullScreenCloser = imgFullScreenWrapper.querySelector(`.${destinationClass}-full-screen-image-closer`); //The container for fullscreen image
+const imgDescr = imgFullScreenWrapper.querySelector(`.${destinationClass}-description`); 
+const imgDescrLink = imgFullScreenWrapper.querySelector(`.${destinationClass}-link`); 
 
 
 
@@ -361,12 +364,12 @@ carousel.addEventListener('mousemove', e => mouseMoveActions(e))
 function setTimeoutToMove() {
     if (!bgMoveCoundown) {
         bgMoveCoundown = setTimeout(() => {
-            console.log("move again");
+            //console.log("move again");
             bgMove = bgMoveSpeed;
             bgMovement(bgMove);
             clearTimeoutToMove();
         }, timeToBgMove);
-        console.log("start cndn ",bgMoveCoundown);
+        //console.log("start cndn ",bgMoveCoundown);
     }
 }
 
@@ -374,7 +377,7 @@ function setTimeoutToMove() {
 
 function clearTimeoutToMove() {
     if (bgMoveCoundown) {
-        console.log("delete contdown ", bgMoveCoundown);
+        //console.log("delete contdown ", bgMoveCoundown);
         clearTimeout(bgMoveCoundown);
         bgMoveCoundown = undefined;
     }
@@ -467,8 +470,5 @@ function destroy() {
 }
 
 return destroy
-        
-
+    
 }
-
-
