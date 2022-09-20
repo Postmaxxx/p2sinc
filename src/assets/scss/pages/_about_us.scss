@@ -1,4 +1,4 @@
-body.about_us {
+/*body.about_us {
 
     & .splide_about-us_1 {
         margin-top: 70px;
@@ -29,7 +29,16 @@ body.about_us {
     
     }
     
-    
-    
 
+}*/
+
+body.about_us {
+
+    .splide_about-us_1 {
+        margin-top: 90px;
+    }
+
+    .connect {
+        margin-top: 50px;
+    }
 }

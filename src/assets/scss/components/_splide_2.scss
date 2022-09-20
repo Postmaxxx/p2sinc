@@ -1,0 +1,87 @@
+.splide_type-2 { // for splide with text paganation and arrows
+
+    .splide__arrows {
+        position: relative;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 25px;
+
+    
+        & > button { //buttons-arrows
+            min-width: 20px;
+            height: 20px;
+            opacity: 1;
+            left: auto;
+            right: auto;
+            cursor: pointer;
+            background-color: transparent;
+            position: relative;
+            border: none;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 60%;
+                height: 60%;
+                border-bottom: 4px solid $blue_text;                
+                border-left: 4px solid $blue_text; 
+                border-radius: 3px;
+            }
+
+            &.splide__arrow--prev::before {
+                transform: translate(-20%, -50%) rotate(45deg) skew(-15deg, -15deg) ;           
+            }
+
+            &.splide__arrow--next::before {
+                transform: translate(-80%, -50%) rotate(-135deg) skew(-15deg, -15deg) ;           
+            }
+        }
+    
+        .splide__pagination_text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none; 
+            flex-wrap: wrap;
+            margin: 0;
+            padding-left: 0; 
+        
+            & li {
+                display: block;
+                padding-right: 20px;
+                padding-left: 20px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+        
+                & button {
+                    font-family: "GTWalsheimMedium";
+                    color: $blue_text;
+                    background-color: transparent;
+                    width: auto;
+                    font-size: 14pt;
+                    line-height: 17pt;
+                    border-radius: 0;
+                    width: 100%;
+                    //min-height: 50px;29788C
+                    opacity: 1;
+                    cursor: pointer;
+                    border: none;
+                }
+        
+                & button.is-active {
+                    text-decoration: underline;
+                    background-color: transparent;
+                    font-size: 14pt;
+                    line-height: 17pt;
+                }
+           
+                &~li { border-left: 1px solid $blue_text; }
+            }
+
+        }
+    }
+}

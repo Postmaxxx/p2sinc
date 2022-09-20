@@ -26,66 +26,6 @@
 
 // --------------------------------------------------------------------------
 
-// for splide with text paganation and arrows
-.splide_type-2 {
-
-    .splide__arrows {
-        position: relative;
-        width: 100%;
-        padding-left: 5%;
-        padding-right: 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    
-        & > button {
-            min-width: 30px;
-            opacity: 1;
-            left: auto;
-            right: auto;
-            height: 30px;
-            cursor: pointer;
-        }
-    
-        .splide__pagination_text {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style: none; 
-            flex-wrap: wrap;
-            margin: 0;
-            padding-left: 0; 
-        
-            & li {
-                display: block;
-                padding-right: 20px;
-                padding-left: 20px;
-        
-                & button {
-                    color: $blue-1;
-                    background-color: transparent;
-                    width: auto;
-                    font-size: 30px;
-                    border-radius: 0;
-                    width: 100%;
-                    //min-height: 50px;
-                    opacity: 1;
-                    cursor: pointer;
-                    border: none;
-                }
-        
-                & button.is-active {
-                    text-decoration: underline;
-                    background-color: transparent;
-                    font-size: 30px;
-                }
-           
-                &~li { border-left: 1px solid #857D7A; }
-            }
-
-        }
-    }
-}
 
 
 //
@@ -108,7 +48,7 @@
 
             h3 {
                 font-size: 36px;
-                color: $blue-1;
+                color: $blue_text;
                 margin-bottom: 30px;
             }
 

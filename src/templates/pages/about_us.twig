@@ -35,10 +35,18 @@
 
     {% set content = {
         hero: {
-            header: 'About Us',
+            header: 'About <br> Us',
             subheader: '',
             text: '',
-            linkto: '#'
+            linkto: '',
+            img: './assets/img/about_hero.jpg',
+            img_alt: 'About Us'
+        },
+        text_1: {
+            header: 'Company Profile',
+            texts: ['P2S is a consulting engineering and commissioning firm committed to innovative designs, sustainable solutions and exceptional services for clients.',
+                    'We design high-performance building systems and central plants that reduce operating costs while providing quality indoor environmental conditions and optimal user comfort. As part of our commissioning practice, P2S ensures optimum performance for new and existing buildings.',
+                    'We offer our customized, sustainable design services to clients in higher education, healthcare, aerospace, port, manufacturing, municipal, K-12, and commercial sectors. Our elite team of 250+ engineers and technical staff can find the best solution for even the most challenging problems.']
         }
     
     }
@@ -52,63 +60,13 @@
 
     {% include '../components/_hero_image.twig' with { id : pageName, content } %}
 
+    {% include '../components/_block_text_1.twig' with { id : pageName, content } %}
 
-        <div class="splide_about-us_1 splide_type-2" id="splide_about-us_1">
-            <div class="splide__track">
-                <div class="splide__list">
-                    <div class="splide__slide">
-                        <img src="./assets/img/1.jpg" alt="Slide-1" data-descr="Slide number 1">
-                    </div>
-                    <div class="splide__slide">
-                        <img src="./assets/img/2.jpg" alt="Slide-2" data-descr="Slide number 2">
-                    </div>
-                        <div class="splide__slide">
-                            <video class="splide__video" width="100%" height="240" controls muted autoplay>
-                                <source src="./assets/vid/videoplayback.mp4" type="video/mp4"  data-descr="Slide number 3">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    <div class="splide__slide">
-                        <img src="./assets/img/3.jpg" alt="Pic4" data-descr="Slide number 4">
-                    </div>
-                </div>
-            </div>
-            <div class="splide__arrows">
-                <button class="splide__arrow--prev">
-                </button>
-                <button class="splide__arrow--next">
-                </button>
-            </div>
-        </div>
-        
+    {% include '../components/_splide_2.twig' with { id : pageName, content } %}
 
-        <div class="homepage__connect" id="homepage__connect">
-            <div class="homepage__connect__item">
-                <lottie-player class="homepage__connect__item__logo_join" autoplay loop mode="normal" src="./assets/json/JoinUs_Widget.json" ></lottie-player>
-                <h3 class="homepage__connect__item__header homepage__connect__item__header_join">Join Us!</h3>
-                <p class="homepage__connect__item__text">We're hiring for a broad range 
-                    of positions. Take a look at our Openings page to learn more and apply!</p>
-                <a class="homepage__connect__item__link" href='#'>Openings &#8594</a>
-            </div>
-            <div class="homepage__connect__item">
-                <lottie-player class="homepage__connect__item__logo_stay" autoplay loop mode="normal" src="./assets/json/StayintheMix_Widget.json" ></lottie-player>
-                <h3 class="homepage__connect__item__header homepage__connect__item__header_stay">Stay In <br> the Mix!</h3>
-                <p class="homepage__connect__item__text">Sign up for the P2S Magazine</p>
-                <form action="" class="homepage__connect__item__form" id="homepage__connect__form">
-                    <input class="homepage__connect__item__form__input" type="text" required placeholder="Name *"></input>
-                    <input class="homepage__connect__item__form__input" type="email" required placeholder="Email *"></input>
-                    <button class="homepage__connect__item__form__button" type="submit" form="homepage__connect__form">Submit &#8594</button>
-                </form>
-            </div>
-            <div class="homepage__connect__item">
-                <lottie-player class="homepage__connect__item__logo_get" autoplay loop mode="normal" src="./assets/json/GetinTouch_Widget.json" ></lottie-player>
-                <h3 class="homepage__connect__item__header homepage__connect__item__header_get">Get In <br> Touch!</h3>
-                <p class="homepage__connect__item__text">We want to hear from you! Fill
-                    out the form and we'll get back to you as soon as we can.</p>
-                <a class="homepage__connect__item__link" href='#'>Form &#8594</a>
-            </div>
 
-        </div>
+    {% include '../components/_connect.twig' with { id : pageName } %}
+    
     </div>
     
 {% endblock content %} 

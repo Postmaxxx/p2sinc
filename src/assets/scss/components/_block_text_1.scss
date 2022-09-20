@@ -1,0 +1,30 @@
+.text_1 {
+    @extend .margin-left;
+    margin-top: 60px;
+
+    & > h3 {
+        font-family: "GTWalsheimBold";
+        font-weight: bold;
+        font-size: 24pt;
+        color: $blue_text;
+    }
+
+    & > div {
+        margin-top: 40px;
+        column-count: 2;
+        column-gap: 50px;
+        column-width: 200px;
+        text-align: left;
+        margin-right: 22%;
+
+        & > p {
+            font-family: "GTWalsheimLight";
+            font-size: 14pt;
+            margin-bottom: 20px;
+            line-height: 120%;
+            max-width: 500px;
+            break-inside: avoid;
+            //border: 1px solid red;
+        }
+    }
+}

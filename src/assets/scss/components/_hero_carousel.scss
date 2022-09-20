@@ -24,7 +24,7 @@
             margin-top: 70px;   
             padding-right: 90px;
             font-family: 'GTWalsheimRegular';
-            color: #3F7793;
+            color: $blue_text;
             
             @include respond-to(lg) {
                 padding-right: 40px;
@@ -104,7 +104,7 @@
                 font-size: 18px;
                 text-decoration: underline;
                 font-family: 'GTWalsheimMedium';
-                color: #3F7793;
+                color: $blue_text;
 
                 @include respond-to(xl) {
                     margin-top: 70px;

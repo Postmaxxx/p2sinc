@@ -5,7 +5,6 @@ const fadeBlock = document.querySelector(".fade-block");
 const carousel = document.querySelector(`[data-carousel='${destinationData}']`) ;
 const destinationClass = "carousel_max";
 
-
 let carouselHeight = carousel.clientHeight;
 let carouselWidth = carousel.clientWidth;
 
@@ -73,6 +72,7 @@ sourceNode.insertAdjacentHTML('afterbegin', `
             <img class="${destinationClass}-full-screen-image">
         </div>
         <div class="${destinationClass}-description">
+            <span class="${destinationClass}-descr-text" href="#"></span>
             <a class="${destinationClass}-link" href="#"></a>
         </div>
     </div>`)
@@ -82,6 +82,7 @@ const imgFullScreenImage = imgFullScreenWrapper.querySelector(`.${destinationCla
 const imgWrapper = imgFullScreenWrapper.querySelector(`.${destinationClass}-img-wrapper`); //The container for fullscreen image
 const imgFullScreenCloser = imgFullScreenWrapper.querySelector(`.${destinationClass}-full-screen-image-closer`); //The container for fullscreen image
 const imgDescr = imgFullScreenWrapper.querySelector(`.${destinationClass}-description`); 
+const imgDescrText = imgFullScreenWrapper.querySelector(`.${destinationClass}-descr-text`); 
 const imgDescrLink = imgFullScreenWrapper.querySelector(`.${destinationClass}-link`); 
 
 
@@ -168,7 +169,6 @@ function defaultFullScreenStyles() {
         height: 0;
         width: 0;
         border-radius: 50%;
-        background-color: #404040;
         position: relarive;
         align-self: flex-end;
         z-index: 2000;
@@ -176,28 +176,39 @@ function defaultFullScreenStyles() {
         cursor: pointer;
         margin-right: 30px;
         transition: ${transitionTime}s;
-        background-image: url(${closePath});
-        background-size: 60% 60%;
+        background-image: url("${closePath}");
+        background-size: 40% 40%;
         background-position: center center;
         background-repeat: no-repeat;
+        background-color: #FFF;
     `;
 
     imgDescr.style.cssText = `
         top: ${carouselHeight-120}px;
         width: 0;
         height: 0;
-        padding: 15px;
-        background-color: #404040;
-        border-radius: 30px;
+        padding: 25px 40px;
+        border-radius: 40px;
         margin-right: 30px;
         align-items: center;
         justify-content: center;
         margin-left: auto;
-        max-width: 300px;
         color: white;
         display: none;
         transition: ${transitionTime}s;
     `;
+        //background-color: #777;
+    //max-width: 300px;
+
+
+    imgDescrText.style.cssText = `
+        font-family: "GTWalsheimMedium";
+        font-size: 24px;
+        pointer-events: auto;
+        color: #FFF;
+        transition: ${transitionTime}s;
+    `;
+
 
     imgDescrLink.style.cssText = `
         pointer-events: auto;
@@ -297,12 +308,19 @@ function expandImage(path, descr, link) {
 
     imgDescr.style.position = `relative`;
     imgDescr.style.top = `-100px`;
-    imgDescr.style.display = 'block'
-    imgDescr.style.height = 'auto'
-    imgDescr.style.width = 'auto'
+    imgDescr.style.display = 'flex';
+    imgDescr.style.height = 'auto';
+    imgDescr.style.width = '90%';
+    imgDescr.style.justifyContent = 'space-between';
+    
+    imgDescr.style.marginLeft = 'auto';
+    imgDescr.style.marginRight = 'auto';
 
 
-    imgDescrLink.innerHTML = descr;
+
+    imgDescrText.innerHTML = descr;
+
+    imgDescrLink.innerHTML = 'Read More &#8594';
     imgDescrLink.href = link;
 
     imgFullScreenCloser.style.position = `relative`;

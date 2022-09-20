@@ -270,7 +270,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
       flex-direction: column; } }
   .our-divisions > h2 {
     font-family: 'GTWalsheimBold';
-    color: #3F7793;
+    color: #29788C;
     font-size: 72px;
     line-height: 68px;
     width: calc(40% - 80px); }
@@ -398,7 +398,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
       margin-top: 70px;
       padding-right: 90px;
       font-family: 'GTWalsheimRegular';
-      color: #3F7793; }
+      color: #29788C; }
       @media (max-width: 1200px) {
         .hero_carousel > div:nth-of-type(1) > div {
           padding-right: 40px; } }
@@ -459,7 +459,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-size: 18px;
         text-decoration: underline;
         font-family: 'GTWalsheimMedium';
-        color: #3F7793; }
+        color: #29788C; }
         @media (max-width: 1400px) {
           .hero_carousel > div:nth-of-type(1) > div > a {
             margin-top: 70px; } }
@@ -518,7 +518,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
       margin-top: 70px;
       padding-right: 90px;
       font-family: 'GTWalsheimRegular';
-      color: #3F7793; }
+      color: #29788C; }
       @media (max-width: 1200px) {
         .hero_image > div:nth-of-type(1) > div {
           padding-right: 40px; } }
@@ -579,7 +579,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         font-size: 18px;
         text-decoration: underline;
         font-family: 'GTWalsheimMedium';
-        color: #3F7793; }
+        color: #29788C; }
         @media (max-width: 1400px) {
           .hero_image > div:nth-of-type(1) > div > a {
             margin-top: 70px; } }
@@ -598,27 +598,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
   .hero_image > div:nth-of-type(2) {
     position: relative;
     margin-left: auto;
-    width: 60%; }
-    .hero_image > div:nth-of-type(2) > .carousel_max {
-      margin: 0;
-      margin-top: 0;
-      padding: 0;
-      margin-left: 0;
-      cursor: grab;
-      display: flex;
-      width: 100% !important;
-      height: 600px !important; }
-      @media (max-width: 1200px) {
-        .hero_image > div:nth-of-type(2) > .carousel_max {
-          height: 550px !important; } }
-      @media (max-width: 768px) {
-        .hero_image > div:nth-of-type(2) > .carousel_max {
-          height: 550px !important; } }
-      @media (max-width: 575px) {
-        .hero_image > div:nth-of-type(2) > .carousel_max {
-          height: 450px !important; } }
-    .hero_image > div:nth-of-type(2) .carousel_max_grabbed {
-      cursor: grabbing; }
+    width: 60%;
+    overflow: hidden; }
+    .hero_image > div:nth-of-type(2) > img {
+      width: 100%;
+      max-width: 600px;
+      object-fit: cover; }
 
 .connect {
   padding-bottom: 60px;
@@ -628,7 +613,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
-  background-color: #3F7793;
+  background-color: #29788C;
   flex-wrap: wrap;
   padding-left: 40px;
   padding-right: 40px; }
@@ -639,7 +624,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
   .connect > div {
     position: relative;
     margin-top: 60px;
-    width: 190px;
+    width: 210px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -706,7 +691,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
       .connect > div > form__button:hover {
         background-color: white;
         border-color: #FFF;
-        color: #3F7793; }
+        color: #29788C; }
     .connect > div > a {
       font-family: 'GTWalsheimBold';
       color: #FFF;
@@ -822,6 +807,93 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     margin-right: auto;
     height: 520px; }
 
+.text_1 {
+  margin-top: 60px; }
+  .text_1 > h3 {
+    font-family: "GTWalsheimBold";
+    font-weight: bold;
+    font-size: 24pt;
+    color: #29788C; }
+  .text_1 > div {
+    margin-top: 40px;
+    column-count: 2;
+    column-gap: 50px;
+    column-width: 200px;
+    text-align: left;
+    margin-right: 22%; }
+    .text_1 > div > p {
+      font-family: "GTWalsheimLight";
+      font-size: 14pt;
+      margin-bottom: 20px;
+      line-height: 120%;
+      max-width: 500px;
+      break-inside: avoid; }
+
+.splide_type-2 .splide__arrows {
+  position: relative;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px; }
+  .splide_type-2 .splide__arrows > button {
+    min-width: 20px;
+    height: 20px;
+    opacity: 1;
+    left: auto;
+    right: auto;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    border: none; }
+    .splide_type-2 .splide__arrows > button::before {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 60%;
+      border-bottom: 4px solid #29788C;
+      border-left: 4px solid #29788C;
+      border-radius: 3px; }
+    .splide_type-2 .splide__arrows > button.splide__arrow--prev::before {
+      transform: translate(-20%, -50%) rotate(45deg) skew(-15deg, -15deg); }
+    .splide_type-2 .splide__arrows > button.splide__arrow--next::before {
+      transform: translate(-80%, -50%) rotate(-135deg) skew(-15deg, -15deg); }
+  .splide_type-2 .splide__arrows .splide__pagination_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 0; }
+    .splide_type-2 .splide__arrows .splide__pagination_text li {
+      display: block;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-top: 5px;
+      margin-bottom: 5px; }
+      .splide_type-2 .splide__arrows .splide__pagination_text li button {
+        font-family: "GTWalsheimMedium";
+        color: #29788C;
+        background-color: transparent;
+        width: auto;
+        font-size: 14pt;
+        line-height: 17pt;
+        border-radius: 0;
+        width: 100%;
+        opacity: 1;
+        cursor: pointer;
+        border: none; }
+      .splide_type-2 .splide__arrows .splide__pagination_text li button.is-active {
+        text-decoration: underline;
+        background-color: transparent;
+        font-size: 14pt;
+        line-height: 17pt; }
+      .splide_type-2 .splide__arrows .splide__pagination_text li ~ li {
+        border-left: 1px solid #29788C; }
+
 .header-container {
   /*   max-width: $site-width;
     height: 50px;
@@ -933,7 +1005,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         border: 2px solid #000;
         cursor: pointer; }
         .footer-container .footer__columns__column .column__button:hover {
-          color: #3F7793;
+          color: #29788C;
           border-color: #FFF;
           background-color: #FFF; }
       .footer-container .footer__columns__column .column__socials {
@@ -958,64 +1030,20 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     .footer-container .footer__columns .wide-colimn {
       margin-right: 60px; }
 
-.margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
+.margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1), .text_1 {
   margin-left: 80px; }
   @media (max-width: 1200px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1), .text_1 {
       margin-left: 70px; } }
   @media (max-width: 990px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1), .text_1 {
       margin-left: 60px; } }
   @media (max-width: 768px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1), .text_1 {
       margin-left: 50px; } }
   @media (max-width: 575px) {
-    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1) {
+    .margin-left, .our-divisions > h2, .hero_carousel > div:nth-of-type(1), .hero_image > div:nth-of-type(1), .text_1 {
       margin-left: 40px; } }
-
-.splide_type-2 .splide__arrows {
-  position: relative;
-  width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-  .splide_type-2 .splide__arrows > button {
-    min-width: 30px;
-    opacity: 1;
-    left: auto;
-    right: auto;
-    height: 30px;
-    cursor: pointer; }
-  .splide_type-2 .splide__arrows .splide__pagination_text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    flex-wrap: wrap;
-    margin: 0;
-    padding-left: 0; }
-    .splide_type-2 .splide__arrows .splide__pagination_text li {
-      display: block;
-      padding-right: 20px;
-      padding-left: 20px; }
-      .splide_type-2 .splide__arrows .splide__pagination_text li button {
-        color: #2B798D;
-        background-color: transparent;
-        width: auto;
-        font-size: 30px;
-        border-radius: 0;
-        width: 100%;
-        opacity: 1;
-        cursor: pointer;
-        border: none; }
-      .splide_type-2 .splide__arrows .splide__pagination_text li button.is-active {
-        text-decoration: underline;
-        background-color: transparent;
-        font-size: 30px; }
-      .splide_type-2 .splide__arrows .splide__pagination_text li ~ li {
-        border-left: 1px solid #857D7A; }
 
 .gallery_projects {
   width: 100%;
@@ -1031,7 +1059,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     flex-wrap: wrap; }
     .gallery_projects .projects__categories .categories__chapter h3 {
       font-size: 36px;
-      color: #2B798D;
+      color: #29788C;
       margin-bottom: 30px; }
     .gallery_projects .projects__categories .categories__chapter .categories__list.columns_2 {
       column-count: 2; }
@@ -1153,6 +1181,48 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
         margin-top: 20px;
         margin-bottom: 30px;
         display: block; }
+
+body.index .carousel_max-description {
+  background-color: #29788C; }
+
+/*body.about_us {
+
+    & .splide_about-us_1 {
+        margin-top: 70px;
+        width: 100%;
+        height: auto;
+        color: white;
+        font-family: 'GTWalsheimMedium';
+    
+    
+        & .splide__text-container {
+    
+            max-width: 270px;
+            min-width: 210px;
+            position: relative;
+            margin-right: 180px;
+            margin-left: auto;
+            padding-left: 30px;
+            top: 100px;
+        }
+    
+
+    
+        & .splide__video {
+            margin-left: auto;
+            margin-right: auto;
+            height: 100%;
+        }
+    
+    }
+    
+
+}*/
+body.about_us .splide_about-us_1 {
+  margin-top: 90px; }
+
+body.about_us .connect {
+  margin-top: 50px; }
 
 html {
   scroll-behavior: smooth; }
