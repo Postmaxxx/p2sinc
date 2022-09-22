@@ -4,9 +4,21 @@
 
     & > h3 {
         font-family: "GTWalsheimBold";
-        font-weight: bold;
         font-size: 24pt;
         color: $blue_text;
+        margin-right: 40px;
+
+        @include respond-to(lg) {
+            font-size: 20pt;
+        }
+
+        @include respond-to(md) {
+            font-size: 18pt;
+        }
+
+        @include respond-to(xs) {
+            font-size: 16pt;
+        }
     }
 
     & > div {
@@ -17,6 +29,15 @@
         text-align: left;
         margin-right: 22%;
 
+        @include respond-to(sm) {
+            column-count: 1;
+            margin-right: 50px;
+        }
+
+        @include respond-to(xs) {
+            margin-right: 40px;
+        }
+
         & > p {
             font-family: "GTWalsheimLight";
             font-size: 14pt;
@@ -24,7 +45,11 @@
             line-height: 120%;
             max-width: 500px;
             break-inside: avoid;
-            //border: 1px solid red;
+
+            @include respond-to(md) {
+                font-size: 12pt;
+            }
+
         }
     }
 }

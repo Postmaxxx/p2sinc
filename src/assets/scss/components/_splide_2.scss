@@ -22,6 +22,15 @@
             position: relative;
             border: none;
 
+            &.splide__arrow--prev {
+                margin-right: 40px;
+            }
+
+            &.splide__arrow--next {
+                margin-left: 40px;
+            }
+
+
             &::before {
                 content: "";
                 position: absolute;
@@ -33,7 +42,7 @@
             }
 
             &.splide__arrow--prev::before {
-                transform: translate(-20%, -50%) rotate(45deg) skew(-15deg, -15deg) ;           
+                transform: translate(-20%, -50%) rotate(45deg) skew(-15deg, -15deg);           
             }
 
             &.splide__arrow--next::before {
@@ -52,10 +61,13 @@
         
             & li {
                 display: block;
-                padding-right: 20px;
-                padding-left: 20px;
+                padding: 0 20px;
                 margin-top: 5px;
                 margin-bottom: 5px;
+
+                @include respond-to(sm) {
+                    padding: 0 10px;
+                }
         
                 & button {
                     font-family: "GTWalsheimMedium";
@@ -70,6 +82,11 @@
                     opacity: 1;
                     cursor: pointer;
                     border: none;
+
+                    @include respond-to(sm) {
+                        font-size: 12pt;
+                        line-height: 14pt;
+                    }
                 }
         
                 & button.is-active {
@@ -77,6 +94,12 @@
                     background-color: transparent;
                     font-size: 14pt;
                     line-height: 17pt;
+
+                    @include respond-to(sm) {
+                        font-size: 12pt;
+                        line-height: 14pt;
+
+                    }
                 }
            
                 &~li { border-left: 1px solid $blue_text; }

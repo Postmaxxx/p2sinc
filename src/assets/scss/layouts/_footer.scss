@@ -125,16 +125,7 @@
             }
         
             & .column__button {
-                background-color: $black;
-                width: 120px;
-                height: 25px;
-                border-radius: 12px;
-                color: #FFF;
-                font-family: 'GTWalsheimMedium';
-                font-size: 10pt;
-                margin-top: 10px;
-                border: 2px solid $black;
-                cursor: pointer;
+                @extend .button_black;
 
                 &:hover {
                     color: $blue_text;

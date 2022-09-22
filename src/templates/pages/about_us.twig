@@ -56,17 +56,21 @@
 
 
 {% block content %}
-    {% include '../components/_nav_side.twig' with nav_side_navs %}
 
-    {% include '../components/_hero_image.twig' with { id : pageName, content } %}
+    <div class="fade-block"></div>
 
-    {% include '../components/_block_text_1.twig' with { id : pageName, content } %}
+    <div class='content-container'>
 
-    {% include '../components/_splide_2.twig' with { id : pageName, content } %}
+        {% include '../components/_nav_side.twig' with nav_side_navs %}
 
+        {% include '../components/_hero_image.twig' with { id : 'about-us_hero', content } %}
 
-    {% include '../components/_connect.twig' with { id : pageName } %}
-    
+        {% include '../components/_block_text_1.twig' with { id : 'about-us_text-1', content } %}
+
+        {% include '../components/_splide_2.twig' with { id : 'about-us_splide-2', content } %}
+
+        {% include '../components/_connect.twig' with { id : 'about-us_connect' } %}
+        
     </div>
     
 {% endblock content %} 
