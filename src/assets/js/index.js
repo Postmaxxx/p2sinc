@@ -134,10 +134,13 @@ makeSideNav();
 
 
   
+const splide_1 = {
+  className: 'splide_index_1',
+}
 
 
   document.addEventListener( 'DOMContentLoaded', function() {
-    var splide = new Splide('.splider', {
+    var splide = new Splide(`.${splide_1.className}`, {
         type: "loop",
         perPag: 1,
         clones:1, 

@@ -63,13 +63,13 @@
 
         {% include '../components/_nav_side.twig' with nav_side_navs %}
 
-        {% include '../components/_hero_image.twig' with { id : 'about-us_hero', content } %}
+        {% include '../components/_hero_image.twig' with { id : pageName ~ '_hero', content } %}
 
-        {% include '../components/_block_text_1.twig' with { id : 'about-us_text-1', content } %}
+        {% include '../components/_block_text_1.twig' with { id : pageName ~ '_text-1', content } %}
 
-        {% include '../components/_splide_2.twig' with { id : 'about-us_splide-2', content } %}
+        {% include '../components/_splide_2.twig' with { id : pageName ~ '_splide_1', content } %}
 
-        {% include '../components/_connect.twig' with { id : 'about-us_connect' } %}
+        {% include '../components/_connect.twig' with { id : pageName ~ '_connect', content } %}
         
     </div>
     

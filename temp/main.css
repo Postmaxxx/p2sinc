@@ -707,13 +707,13 @@ body {
       margin-top: 20px;
       text-decoration: underline; }
 
-.splider {
+.splide {
   margin-top: 70px;
   width: 100%;
   height: 520px;
   color: white;
   font-family: 'GTWalsheimMedium'; }
-  .splider > div > div > div > div {
+  .splide > div > div > div > div {
     max-width: 270px;
     min-width: 210px;
     position: relative;
@@ -721,56 +721,56 @@ body {
     margin-left: auto;
     padding-left: 30px;
     top: 100px; }
-    .splider > div > div > div > div > span {
+    .splide > div > div > div > div > span {
       font-size: 18px;
       line-height: 21px; }
       @media (max-width: 990px) {
-        .splider > div > div > div > div > span {
+        .splide > div > div > div > div > span {
           font-size: 17px;
           line-height: 20px; } }
       @media (max-width: 768px) {
-        .splider > div > div > div > div > span {
+        .splide > div > div > div > div > span {
           font-size: 15px;
           line-height: 17px; } }
       @media (max-width: 575px) {
-        .splider > div > div > div > div > span {
+        .splide > div > div > div > div > span {
           font-size: 13px;
           line-height: 14px; } }
-    .splider > div > div > div > div > h4 {
+    .splide > div > div > div > div > h4 {
       font-family: 'GTWalsheimBold';
       font-size: 72px;
       line-height: 62px;
       margin-top: 10px; }
       @media (max-width: 990px) {
-        .splider > div > div > div > div > h4 {
+        .splide > div > div > div > div > h4 {
           font-size: 68px;
           line-height: 58px; } }
       @media (max-width: 768px) {
-        .splider > div > div > div > div > h4 {
+        .splide > div > div > div > div > h4 {
           font-size: 58px;
           line-height: 48px; } }
       @media (max-width: 575px) {
-        .splider > div > div > div > div > h4 {
+        .splide > div > div > div > div > h4 {
           font-size: 48px;
           line-height: 38px; } }
-    .splider > div > div > div > div > p {
+    .splide > div > div > div > div > p {
       font-family: 'GTWalsheimBold';
       font-size: 18px;
       line-height: 21px;
       margin-top: 18px; }
       @media (max-width: 990px) {
-        .splider > div > div > div > div > p {
+        .splide > div > div > div > div > p {
           font-size: 17px;
           line-height: 20px; } }
       @media (max-width: 768px) {
-        .splider > div > div > div > div > p {
+        .splide > div > div > div > div > p {
           font-size: 15px;
           line-height: 17px; } }
       @media (max-width: 768px) {
-        .splider > div > div > div > div > p {
+        .splide > div > div > div > div > p {
           font-size: 13px;
           line-height: 14px; } }
-    .splider > div > div > div > div > a {
+    .splide > div > div > div > div > a {
       font-family: 'GTWalsheimBold';
       display: inline-block;
       font-size: 12px;
@@ -778,14 +778,14 @@ body {
       margin-top: 15px;
       color: #FFF; }
       @media (max-width: 768px) {
-        .splider > div > div > div > div > a {
+        .splide > div > div > div > div > a {
           font-size: 10px;
           line-height: 12px; } }
       @media (max-width: 575px) {
-        .splider > div > div > div > div > a {
+        .splide > div > div > div > div > a {
           font-size: 8px;
           line-height: 10px; } }
-  .splider .splide__pagination {
+  .splide .splide__pagination {
     position: relative;
     top: -18%;
     height: 10px;
@@ -796,20 +796,20 @@ body {
     padding-left: 30px;
     padding-right: 0;
     justify-content: flex-start; }
-    .splider .splide__pagination button {
+    .splide .splide__pagination button {
       background-color: transparent;
       border: 2px solid white;
       width: 10px;
       height: 10px;
       box-sizing: border-box;
       margin: 7px; }
-    .splider .splide__pagination button.is-active {
+    .splide .splide__pagination button.is-active {
       box-sizing: border-box;
       border: none;
       background-color: white;
       width: 8px;
       height: 8px; }
-  .splider .splide__video {
+  .splide .splide__video {
     margin-left: auto;
     margin-right: auto;
     height: 520px; }
@@ -855,7 +855,7 @@ body {
         .text_1 > div > p {
           font-size: 12pt; } }
 
-.splide_type-2 .splide__arrows {
+.splide_2 .splide__arrows {
   position: relative;
   width: 100%;
   padding-left: 5%;
@@ -864,7 +864,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 25px; }
-  .splide_type-2 .splide__arrows > button {
+  .splide_2 .splide__arrows > button {
     min-width: 20px;
     height: 20px;
     opacity: 1;
@@ -874,11 +874,11 @@ body {
     background-color: transparent;
     position: relative;
     border: none; }
-    .splide_type-2 .splide__arrows > button.splide__arrow--prev {
+    .splide_2 .splide__arrows > button.splide__arrow--prev {
       margin-right: 40px; }
-    .splide_type-2 .splide__arrows > button.splide__arrow--next {
+    .splide_2 .splide__arrows > button.splide__arrow--next {
       margin-left: 40px; }
-    .splide_type-2 .splide__arrows > button::before {
+    .splide_2 .splide__arrows > button::before {
       content: "";
       position: absolute;
       width: 60%;
@@ -886,11 +886,11 @@ body {
       border-bottom: 4px solid #29788C;
       border-left: 4px solid #29788C;
       border-radius: 3px; }
-    .splide_type-2 .splide__arrows > button.splide__arrow--prev::before {
+    .splide_2 .splide__arrows > button.splide__arrow--prev::before {
       transform: translate(-20%, -50%) rotate(45deg) skew(-15deg, -15deg); }
-    .splide_type-2 .splide__arrows > button.splide__arrow--next::before {
+    .splide_2 .splide__arrows > button.splide__arrow--next::before {
       transform: translate(-80%, -50%) rotate(-135deg) skew(-15deg, -15deg); }
-  .splide_type-2 .splide__arrows .splide__pagination_text {
+  .splide_2 .splide__arrows .splide__pagination_text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -898,15 +898,15 @@ body {
     flex-wrap: wrap;
     margin: 0;
     padding-left: 0; }
-    .splide_type-2 .splide__arrows .splide__pagination_text li {
+    .splide_2 .splide__arrows .splide__pagination_text li {
       display: block;
       padding: 0 20px;
       margin-top: 5px;
       margin-bottom: 5px; }
       @media (max-width: 768px) {
-        .splide_type-2 .splide__arrows .splide__pagination_text li {
+        .splide_2 .splide__arrows .splide__pagination_text li {
           padding: 0 10px; } }
-      .splide_type-2 .splide__arrows .splide__pagination_text li button {
+      .splide_2 .splide__arrows .splide__pagination_text li button {
         font-family: "GTWalsheimMedium";
         color: #29788C;
         background-color: transparent;
@@ -919,19 +919,19 @@ body {
         cursor: pointer;
         border: none; }
         @media (max-width: 768px) {
-          .splide_type-2 .splide__arrows .splide__pagination_text li button {
+          .splide_2 .splide__arrows .splide__pagination_text li button {
             font-size: 12pt;
             line-height: 14pt; } }
-      .splide_type-2 .splide__arrows .splide__pagination_text li button.is-active {
+      .splide_2 .splide__arrows .splide__pagination_text li button.is-active {
         text-decoration: underline;
         background-color: transparent;
         font-size: 14pt;
         line-height: 17pt; }
         @media (max-width: 768px) {
-          .splide_type-2 .splide__arrows .splide__pagination_text li button.is-active {
+          .splide_2 .splide__arrows .splide__pagination_text li button.is-active {
             font-size: 12pt;
             line-height: 14pt; } }
-      .splide_type-2 .splide__arrows .splide__pagination_text li ~ li {
+      .splide_2 .splide__arrows .splide__pagination_text li ~ li {
         border-left: 1px solid #29788C; }
 
 .gallery_projects {

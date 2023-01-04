@@ -10,7 +10,7 @@ const splide_1 = {
 
 // creation splide type-2
 document.addEventListener( 'DOMContentLoaded', function() {
-  var splideAboutUs_1 = new Splide(`.${splide_1.className}`, {
+  var splideAboutUs_1 = new Splide(`#about-us_splide_1`, {
       type: "loop",
       perPage: 1,
       clones:1, 
