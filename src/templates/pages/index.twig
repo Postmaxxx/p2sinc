@@ -9,23 +9,23 @@
 
 {% set nav_side_navs = [
     {
-        text: "WE ARE P2S INC.",
-        block: "index_hero",
-        link_to: "#index_hero"
+        text: "OUR DIVISIONS",
+        block: "hero",
+        link_to: "#divisions"
     },
     {
         text: "OUR DIVISIONS",
-        block: "homepage__our-divisions",
+        block: "divisions",
         link_to: "#splide"
     },
     {
         text: "NEWS",
         block: "splide",
-        link_to: "#homepage__connect"
+        link_to: "#connect"
     },
     {
         text: "JOIN US",
-        block: "homepage__connect",
+        block: "connect",
         link_to: "#footer-container"
     }
     ]
@@ -48,17 +48,18 @@
 
 {% block content %}
     {% include '../components/_nav_side.twig' with nav_side_navs %}
+    
     <div class="fade-block"></div>
 
     <div class='content-container'>
         
-        {% include '../components/_hero_carousel.twig' with { id : 'index_hero', content } %}
+        {% include '../components/_hero_carousel.twig' with { id : 'hero', content } %}
         
-        {% include '../components/_our-divisions.twig' with { id : 'index_divisions' } %}
+        {% include '../components/_our-divisions.twig' with { id : 'divisions' } %}
 
-        {% include '../components/_splide.twig' with { id : 'index_splide' } %}
+        {% include '../components/_splide.twig' with { id : 'splide' } %}
 
-        {% include '../components/_connect.twig' with { id : 'index_connect' } %}
+        {% include '../components/_connect.twig' with { id : 'connect' } %}
 
     </div>
     
