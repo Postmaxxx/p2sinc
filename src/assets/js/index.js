@@ -135,31 +135,31 @@ makeSideNav();
 
   
 const splide_1 = {
-  className: 'splide_index_1',
+  className: 'splide',
 }
 
 
   document.addEventListener( 'DOMContentLoaded', function() {
     var splide = new Splide(`.${splide_1.className}`, {
-        type: "loop",
-        perPag: 1,
-        clones:1, 
-        arrows: false,
-        drag: true,
-        dragMinThreshold: {
-            mouse: 0,
-            touch: 10,
-        },
-        autoplay: true,
-        interval: 4000,
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        cover: true,
-        height: "520px",
-        classes: {
-            pagination: 'splide__pagination',
-            //page      : 'splide__pagination__page your-class-page',
-        },
+      type: "loop",
+      perPag: 1,
+      clones:1, 
+      arrows: false,
+      drag: true,
+      dragMinThreshold: {
+          mouse: 0,
+          touch: 10,
+      },
+      autoplay: true,
+      interval: 4000,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      cover: true,
+      height: "520px",
+      classes: {
+          pagination: 'splide__pagination splide_1__pagination',
+          //page      : 'splide__pagination__page your-class-page',
+      },
     });
     splide.mount();
 });
